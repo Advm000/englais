@@ -1,0 +1,4726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Atelier — 2 Bac | Courses, Writing & Exam Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ─── Light Theme (default) ─── */
+    --ink:#1a1814;
+    --cream:#f6f1e7;
+    --paper:#fbf7ed;
+    --gold:#b8893a;
+    --burgundy:#8b2c2c;
+    --navy:#1d3557;
+    --moss:#3d5a3a;
+    --line:#d9cfb8;
+    --soft:#ece3cf;
+
+    /* Text hierarchy */
+    --text-muted:#5c574e;
+    --text-faint:#7d7565;
+
+    /* Feedback colors */
+    --success:#3d5a3a;
+    --success-bg:#e8f0e3;
+    --success-text:#1a3018;
+    --error:#8b2c2c;
+    --error-bg:#f5e3e3;
+    --error-text:#5a1c1c;
+
+    /* Shadows */
+    --shadow-sm:0 2px 8px rgba(26,24,20,0.04);
+    --shadow-md:0 10px 30px rgba(26,24,20,0.08);
+    --shadow-lg:0 25px 50px rgba(26,24,20,0.12);
+    --shadow-card:0 1px 0 var(--line);
+
+    /* Grain opacity */
+    --grain-opacity:0.4;
+
+    /* Type stacks - upgraded */
+    --font-display:'Bricolage Grotesque','Fraunces',Georgia,serif;
+    --font-serif:'Fraunces','Instrument Serif',Georgia,serif;
+    --font-body:'Inter','Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --font-mono:'JetBrains Mono','SF Mono',Menlo,monospace;
+    --font-accent:'Space Grotesk','Inter',sans-serif;
+    --font-ar:'IBM Plex Sans Arabic','Noto Naskh Arabic','Amiri',serif;
+    --font-ar-display:'Amiri','IBM Plex Sans Arabic',serif;
+
+    /* Electric accent for cool moments */
+    --electric:#3a5cff;
+    --hot:#ff5c3a;
+
+    /* Motion */
+    --ease-out:cubic-bezier(0.16,1,0.3,1);
+    --ease-in-out:cubic-bezier(0.65,0,0.35,1);
+    --ease-elegant:cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+
+  /* ─── Dark Theme ─── */
+  [data-theme="dark"]{
+    --ink:#f0e6d6;
+    --cream:#1c1814;
+    --paper:#14110d;
+    --gold:#d4a651;
+    --burgundy:#e89090;
+    --moss:#a8c4a0;
+    --line:#3a3328;
+    --soft:#25201a;
+
+    --text-muted:#b3a99a;
+    --text-faint:#8a7f70;
+
+    --success:#7fa775;
+    --success-bg:#1f2e1c;
+    --success-text:#c4d8b8;
+    --error:#e89090;
+    --error-bg:#2e1717;
+    --error-text:#f0b8b8;
+
+    --shadow-sm:0 2px 8px rgba(0,0,0,0.4);
+    --shadow-md:0 10px 30px rgba(0,0,0,0.5);
+    --shadow-lg:0 25px 50px rgba(0,0,0,0.6);
+
+    --grain-opacity:0.15;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     🔥 3D × COOL EFFECTS — Modern Pro Vibes
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Animated mesh gradient hero background */
+  .hero{
+    background:
+      radial-gradient(circle at 20% 30%,rgba(184,137,58,0.18),transparent 45%),
+      radial-gradient(circle at 80% 70%,rgba(139,44,44,0.12),transparent 45%),
+      radial-gradient(circle at 60% 20%,rgba(58,92,255,0.06),transparent 50%),
+      var(--paper);
+    background-size:200% 200%;
+    animation:meshShift 18s ease-in-out infinite;
+  }
+  [data-theme="dark"] .hero{
+    background:
+      radial-gradient(circle at 20% 30%,rgba(212,166,81,0.12),transparent 45%),
+      radial-gradient(circle at 80% 70%,rgba(232,144,144,0.08),transparent 45%),
+      radial-gradient(circle at 60% 20%,rgba(58,92,255,0.05),transparent 50%),
+      var(--paper);
+    background-size:200% 200%;
+    animation:meshShift 18s ease-in-out infinite;
+  }
+  @keyframes meshShift{
+    0%,100%{background-position:0% 0%,100% 100%,50% 50%,0 0}
+    50%{background-position:100% 50%,0% 50%,50% 50%,0 0}
+  }
+
+  /* 3D card tilt — applied via JS */
+  .tilt{
+    transition:transform 0.6s var(--ease-out),box-shadow 0.6s var(--ease-out);
+    transform-style:preserve-3d;
+    will-change:transform;
+  }
+  .tilt.tilting{
+    transition:transform 0.1s ease-out;
+  }
+  .tilt .lift-1{transform:translateZ(20px)}
+  .tilt .lift-2{transform:translateZ(40px)}
+
+  /* 3D hero text - layered depth */
+  .hero h1{
+    perspective:1000px;
+    transform-style:preserve-3d;
+    text-shadow:
+      2px 2px 0 rgba(184,137,58,0.15),
+      4px 4px 0 rgba(184,137,58,0.10),
+      6px 6px 0 rgba(184,137,58,0.06);
+  }
+  [data-theme="dark"] .hero h1{
+    text-shadow:
+      2px 2px 0 rgba(212,166,81,0.2),
+      4px 4px 0 rgba(212,166,81,0.12),
+      6px 6px 0 rgba(212,166,81,0.06);
+  }
+  .hero h1 em{
+    display:inline-block;
+    transform:translateZ(30px);
+    text-shadow:
+      2px 2px 0 rgba(139,44,44,0.15),
+      4px 4px 0 rgba(139,44,44,0.10);
+  }
+
+  /* Marquee strip - infinite scrolling brand bar */
+  .marquee{
+    background:var(--ink);
+    color:var(--paper);
+    overflow:hidden;
+    padding:24px 0;
+    position:relative;
+    transform:rotate(-1.5deg) scale(1.05);
+    margin:60px 0;
+  }
+  [data-theme="dark"] .marquee{
+    background:var(--cream);
+    border-top:1px solid var(--gold);
+    border-bottom:1px solid var(--gold);
+    color:var(--ink);
+  }
+  .marquee-track{
+    display:flex;
+    gap:48px;
+    align-items:center;
+    animation:scrollM 40s linear infinite;
+    width:max-content;
+    white-space:nowrap;
+  }
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-item{
+    font-family:var(--font-display);
+    font-size:clamp(36px,5.5vw,68px);
+    font-weight:500;
+    letter-spacing:-2px;
+    line-height:1;
+    display:inline-flex;
+    align-items:center;
+    gap:48px;
+  }
+  .marquee-item em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--gold);
+    font-family:'Fraunces',serif;
+  }
+  .marquee-star{
+    color:var(--gold);
+    font-size:clamp(28px,4vw,48px);
+    animation:starSpin 8s linear infinite;
+    display:inline-block;
+  }
+  @keyframes scrollM{
+    to{transform:translateX(-50%)}
+  }
+  @keyframes starSpin{
+    to{transform:rotate(360deg)}
+  }
+
+  /* Sticker badge - rotating with attention */
+  .sticker{
+    background:var(--gold);
+    color:var(--ink);
+    padding:10px 18px;
+    font-family:var(--font-mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    display:inline-block;
+    border-radius:100px;
+    box-shadow:0 4px 16px rgba(184,137,58,0.4);
+    animation:stickerFloat 4s ease-in-out infinite;
+    margin-bottom:24px;
+  }
+  @keyframes stickerFloat{
+    0%,100%{transform:rotate(-4deg) translateY(0)}
+    50%{transform:rotate(4deg) translateY(-4px)}
+  }
+
+  /* Glass morphism on hero card */
+  .hero-card{
+    background:rgba(246,241,231,0.55) !important;
+    backdrop-filter:blur(24px) saturate(180%);
+    -webkit-backdrop-filter:blur(24px) saturate(180%);
+    border:1px solid rgba(217,207,184,0.4);
+    transform-style:preserve-3d;
+    animation:floatCard 6s ease-in-out infinite;
+  }
+  [data-theme="dark"] .hero-card{
+    background:rgba(28,24,20,0.5) !important;
+    border:1px solid rgba(212,166,81,0.18);
+  }
+  @keyframes floatCard{
+    0%,100%{transform:translateY(0) rotate(0)}
+    50%{transform:translateY(-12px) rotate(0.5deg)}
+  }
+
+  /* Floating decorative orbs in hero */
+  .hero-orb{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(50px);
+    opacity:0.55;
+    animation:orbDrift 14s ease-in-out infinite;
+    z-index:0;
+  }
+  [data-theme="dark"] .hero-orb{opacity:0.4}
+  .hero-orb.o1{
+    width:340px;height:340px;
+    background:radial-gradient(circle,var(--gold) 0%,transparent 70%);
+    top:8%;left:3%;
+  }
+  .hero-orb.o2{
+    width:280px;height:280px;
+    background:radial-gradient(circle,var(--burgundy) 0%,transparent 70%);
+    bottom:12%;right:6%;
+    animation-delay:-4.5s;
+  }
+  .hero-orb.o3{
+    width:200px;height:200px;
+    background:radial-gradient(circle,var(--electric) 0%,transparent 70%);
+    top:45%;right:35%;
+    animation-delay:-9s;
+    opacity:0.3;
+  }
+  [data-theme="dark"] .hero-orb.o3{opacity:0.2}
+  @keyframes orbDrift{
+    0%,100%{transform:translate(0,0) scale(1)}
+    33%{transform:translate(40px,-30px) scale(1.1)}
+    66%{transform:translate(-30px,40px) scale(0.95)}
+  }
+
+  /* Display typography overrides — Bricolage Grotesque */
+  .hero h1,
+  .section-header h2,
+  .marquee-item,
+  .writing-panel h3,
+  .lang-panel h3,
+  .results-message,
+  .footer-brand h3,
+  .score-text,
+  .test-card h3,
+  .unit-card h3,
+  .tip-card h4{
+    font-family:var(--font-display) !important;
+    font-weight:600;
+    letter-spacing:-1.5px;
+  }
+  .hero h1{font-weight:700;letter-spacing:-4px;font-size:clamp(60px,9vw,140px)}
+  .section-header h2{font-weight:600;letter-spacing:-2.5px;font-size:clamp(46px,6vw,84px)}
+
+  /* Italics use Fraunces for editorial contrast */
+  .hero h1 em,
+  .section-header h2 em,
+  .writing-panel h3 em,
+  .lang-panel h3 em,
+  .results-message em,
+  .marquee-item em{
+    font-family:'Fraunces','Instrument Serif',serif !important;
+    font-style:italic;
+    font-weight:400;
+  }
+
+  /* Section tags & labels use Space Grotesk */
+  .section-tag,
+  .hero-meta,
+  .hero-card-label,
+  .test-meta,
+  .q-num,
+  .reading-text-label,
+  .level-badge,
+  .test-icon .pts,
+  .lbl,
+  .quiz-progress-text,
+  .results-stats .stat-item .l,
+  .breakdown-item .value,
+  .nav-links a,
+  .writing-nav li > div,
+  .lang-nav li > span:first-child{
+    font-family:var(--font-accent) !important;
+    font-feature-settings:'ss01' 1;
+  }
+  .nav-links a{font-weight:500;font-size:13px;letter-spacing:0.3px}
+
+  /* Logo refresh */
+  .logo{
+    font-family:var(--font-display);
+    font-weight:700;
+    letter-spacing:-1px;
+  }
+
+  /* Tip numbers - massive Bricolage */
+  .tip-num{
+    font-family:var(--font-display) !important;
+    font-weight:700 !important;
+    font-style:normal !important;
+    font-size:72px !important;
+    letter-spacing:-3px !important;
+    line-height:0.9;
+  }
+
+  /* Stat numbers dramatic */
+  .stat .num{
+    font-family:var(--font-display);
+    font-weight:700;
+    letter-spacing:-2px;
+    font-size:52px;
+  }
+
+  /* Smooth scroll behavior */
+  html{scroll-padding-top:90px}
+
+  /* Enhanced cursor — bigger blob */
+  .cursor-dot{
+    width:14px;height:14px;
+    background:var(--burgundy);
+    mix-blend-mode:difference;
+  }
+  .cursor-dot.hover{
+    width:72px;height:72px;
+    background:var(--gold);
+  }
+  [data-theme="dark"] .cursor-dot{
+    background:var(--gold);
+    mix-blend-mode:screen;
+  }
+  [data-theme="dark"] .cursor-dot.hover{
+    background:var(--burgundy);
+  }
+
+  /* Glow on primary buttons */
+  .btn-primary{
+    box-shadow:0 4px 16px rgba(26,24,20,0.15);
+    position:relative;
+  }
+  .btn-primary::after{
+    content:'';
+    position:absolute;
+    inset:-3px;
+    background:linear-gradient(135deg,var(--gold),var(--burgundy),var(--electric));
+    border-radius:inherit;
+    z-index:-1;
+    opacity:0;
+    filter:blur(12px);
+    transition:opacity 0.5s;
+  }
+  .btn-primary:hover::after{opacity:0.6}
+  .btn-primary:hover{box-shadow:0 12px 30px rgba(139,44,44,0.3)}
+
+  /* Hover noise overlay on cards */
+  .unit-card::after,.test-card::after,.tip-card::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.7 0 0 0 0 0.55 0 0 0 0 0.2 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:0;
+    pointer-events:none;
+    mix-blend-mode:overlay;
+    transition:opacity 0.6s;
+    z-index:1;
+  }
+  .unit-card:hover::after,.test-card:hover::after,.tip-card:hover::after{
+    opacity:0.4;
+  }
+  .unit-card > *,.test-card > *,.tip-card > *{position:relative;z-index:2}
+
+  /* Phrasal items glow */
+  .phrasal-item:hover{
+    box-shadow:0 12px 30px rgba(184,137,58,0.25),inset 0 0 0 1px var(--gold);
+  }
+
+  /* Results message bigger */
+  .results-message{
+    font-size:42px !important;
+    letter-spacing:-1.5px;
+  }
+
+  /* Score text dramatic */
+  .score-text{
+    font-weight:700;
+    letter-spacing:-3px;
+  }
+
+  /* Footer brand */
+  .footer-brand h3{
+    font-size:42px;
+    letter-spacing:-1.5px;
+    font-weight:700;
+  }
+
+  /* Mobile adjustments */
+  @media(max-width:768px){
+    .hero-orb{display:none}
+    .marquee{transform:rotate(-1deg) scale(1.02)}
+  }
+  @media(max-width:640px){
+    .marquee-item{font-size:30px;gap:24px}
+    .marquee-track{gap:24px}
+    .tip-num{font-size:52px !important}
+    .hero h1{letter-spacing:-2.5px}
+  }
+
+  /* Global theme transition */
+  html{transition:background-color 0.5s var(--ease-out)}
+  body,nav,section,footer,
+  .unit-card,.hero-card,.test-card,.tip-card,
+  .quiz-container,.results-container,.q-option,
+  .phrase-card,.rule-card,.phrasal-item,
+  .reading-text,.formula-box,.example-block,
+  .writing-sidebar,.lang-sidebar,.linker-cat,
+  .structure-box,.exam-paper,.exam-visual,
+  .breakdown-item,.hero-card,.q-feedback,
+  .level-badge,.tense-table,.verbs-table,
+  .verbs-table th,.tense-table th,.tense-table td,
+  .tense-table tr td,.q-option::before,.btn,
+  .quiz-exit,.lang-toggle,.theme-toggle,
+  .menu-toggle,.tag,.section-tag,.score-text,
+  .score-text .pct,.results-message,
+  p,h1,h2,h3,h4,h5,h6,span,a,li{
+    transition:background-color 0.5s var(--ease-out),
+               color 0.4s var(--ease-out),
+               border-color 0.4s var(--ease-out),
+               box-shadow 0.4s var(--ease-out);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--gold);color:var(--paper)}
+
+  /* === ARABIC TEXT === */
+  .ar{
+    font-family:var(--font-ar);
+    direction:rtl;
+    text-align:right;
+    display:block;
+    margin-top:8px;
+    color:var(--moss);
+    font-size:0.95em;
+    line-height:1.85;
+    font-weight:500;
+  }
+  .ar-inline{
+    font-family:var(--font-ar);
+    direction:rtl;
+    color:var(--moss);
+    font-weight:500;
+  }
+  .ar-small{
+    font-family:var(--font-ar);
+    direction:rtl;
+    text-align:right;
+    display:block;
+    margin-top:4px;
+    color:var(--text-faint);
+    font-size:0.85em;
+    font-style:normal;
+    font-weight:400;
+  }
+  body.hide-ar .ar,
+  body.hide-ar .ar-small{display:none}
+
+  /* Language toggle */
+  .lang-toggle{
+    background:var(--ink);color:var(--paper);
+    border:none;cursor:pointer;
+    padding:8px 16px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:1px;
+    text-transform:uppercase;
+    transition:all 0.3s;
+  }
+  .lang-toggle:hover{background:var(--burgundy)}
+
+  /* Theme toggle (dark/light) */
+  .theme-toggle{
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink);
+    cursor:pointer;
+    width:40px;height:40px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+    transition:all 0.4s var(--ease-out);
+    position:relative;
+    overflow:hidden;
+    flex-shrink:0;
+  }
+  .theme-toggle:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+    transform:rotate(15deg);
+  }
+  .theme-toggle .icon{
+    position:absolute;
+    transition:transform 0.5s var(--ease-out),opacity 0.3s;
+  }
+  .theme-toggle .icon.sun{
+    transform:translateY(0) rotate(0);
+    opacity:1;
+  }
+  .theme-toggle .icon.moon{
+    transform:translateY(30px) rotate(90deg);
+    opacity:0;
+  }
+  [data-theme="dark"] .theme-toggle .icon.sun{
+    transform:translateY(-30px) rotate(90deg);
+    opacity:0;
+  }
+  [data-theme="dark"] .theme-toggle .icon.moon{
+    transform:translateY(0) rotate(0);
+    opacity:1;
+  }
+
+  /* === NAV === */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(251,247,237,0.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    padding:18px 5%;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:20px;
+  }
+  .logo{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:24px;
+    letter-spacing:-0.5px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .logo-mark{
+    width:32px;height:32px;
+    background:var(--ink);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    border-radius:50%;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:18px;
+  }
+  .nav-right{display:flex;align-items:center;gap:24px}
+  .nav-links{display:flex;gap:32px;list-style:none}
+  .nav-links a{
+    color:var(--ink);text-decoration:none;
+    font-size:14px;font-weight:500;
+    position:relative;
+    transition:color 0.3s;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;bottom:-4px;left:0;
+    width:0;height:1px;background:var(--gold);
+    transition:width 0.3s;
+  }
+  .nav-links a:hover{color:var(--gold)}
+  .nav-links a:hover::after{width:100%}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:24px}
+
+  /* === HERO === */
+  .hero{
+    min-height:100vh;
+    padding:140px 5% 80px;
+    position:relative;
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:60px;
+    align-items:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;
+    top:0;right:0;width:55%;height:100%;
+    background:
+      radial-gradient(circle at 70% 30%, rgba(184,137,58,0.08), transparent 50%),
+      radial-gradient(circle at 30% 70%, rgba(139,44,44,0.05), transparent 50%);
+    pointer-events:none;
+  }
+  .hero-meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--burgundy);
+    margin-bottom:24px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .hero-meta::before{
+    content:'';width:40px;height:1px;background:var(--burgundy);
+  }
+  .hero h1{
+    font-family:var(--font-display);
+    font-size:clamp(56px,8vw,120px);
+    font-weight:400;
+    line-height:0.95;
+    letter-spacing:-3px;
+    margin-bottom:30px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--gold);
+    font-family:var(--font-display);
+  }
+  .hero h1 .underline{
+    position:relative;display:inline-block;
+  }
+  .hero h1 .underline::after{
+    content:'';position:absolute;
+    bottom:6px;left:0;right:0;height:8px;
+    background:var(--soft);
+    z-index:-1;
+  }
+  .hero p{
+    font-size:18px;
+    color:var(--text-muted);
+    max-width:520px;
+    margin-bottom:20px;
+    line-height:1.7;
+  }
+  .hero .ar{
+    max-width:520px;
+    margin-bottom:40px;
+    font-size:17px;
+  }
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    padding:16px 32px;
+    border:none;cursor:pointer;
+    font-family:'Inter',sans-serif;
+    font-weight:500;font-size:14px;
+    letter-spacing:0.5px;
+    text-decoration:none;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:all 0.3s;
+  }
+  .btn-primary{
+    background:var(--ink);color:var(--paper);
+  }
+  .btn-primary:hover{background:var(--burgundy);transform:translateY(-2px)}
+  .btn-secondary{
+    background:transparent;color:var(--ink);
+    border:1px solid var(--ink);
+  }
+  .btn-secondary:hover{background:var(--ink);color:var(--paper)}
+
+  .hero-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:40px;
+    position:relative;
+    box-shadow:20px 20px 0 var(--soft);
+  }
+  .hero-card-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--gold);
+    margin-bottom:16px;
+  }
+  .hero-card h3{
+    font-family:'Fraunces',serif;
+    font-size:28px;
+    line-height:1.2;
+    margin-bottom:12px;
+    font-weight:500;
+  }
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+    margin-top:30px;
+    padding-top:30px;
+    border-top:1px dashed var(--line);
+  }
+  .stat .num{
+    font-family:'Fraunces',serif;
+    font-size:36px;
+    font-weight:500;
+    color:var(--burgundy);
+    line-height:1;
+  }
+  .stat .lbl{
+    font-size:12px;
+    color:var(--text-muted);
+    margin-top:6px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  .stat .ar-small{text-align:left;direction:rtl;font-size:12px}
+
+  /* === SECTIONS === */
+  section{padding:100px 5%}
+  .section-header{
+    max-width:800px;
+    margin-bottom:60px;
+  }
+  .section-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--gold);
+    margin-bottom:16px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .section-tag::before{
+    content:'';width:30px;height:1px;background:var(--gold);
+  }
+  .section-header h2{
+    font-family:var(--font-display);
+    font-size:clamp(42px,5.5vw,72px);
+    font-weight:400;
+    line-height:1.02;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+  }
+  .section-header h2 em{
+    font-style:italic;color:var(--burgundy);
+    font-family:var(--font-display);
+  }
+  .section-header p{
+    font-size:17px;
+    color:var(--text-muted);
+    max-width:600px;
+  }
+
+  /* === COURSES === */
+  #courses{background:var(--cream)}
+  .units-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:24px;
+  }
+  .unit-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:32px 28px;
+    cursor:pointer;
+    transition:all 0.4s;
+    position:relative;
+    overflow:hidden;
+  }
+  .unit-card::before{
+    content:'';position:absolute;
+    top:0;left:0;width:4px;height:0;
+    background:var(--gold);
+    transition:height 0.4s;
+  }
+  .unit-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px rgba(26,24,20,0.08);
+  }
+  .unit-card:hover::before{height:100%}
+  .unit-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--gold);
+    letter-spacing:2px;
+    margin-bottom:12px;
+  }
+  .unit-card h3{
+    font-family:'Fraunces',serif;
+    font-size:24px;
+    font-weight:500;
+    line-height:1.2;
+    margin-bottom:6px;
+  }
+  .unit-card .ar-inline{
+    font-size:16px;display:block;margin-bottom:14px;
+    color:var(--burgundy);
+  }
+  .unit-card p{
+    font-size:14px;
+    color:var(--text-muted);
+    line-height:1.6;
+    margin-bottom:10px;
+  }
+  .unit-card .ar{font-size:13px;margin-bottom:18px}
+  .unit-tags{
+    display:flex;flex-wrap:wrap;gap:6px;
+  }
+  .tag{
+    font-size:11px;
+    padding:4px 10px;
+    background:var(--soft);
+    border-radius:2px;
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  /* === WRITING SECTION === */
+  #writing{position:relative}
+  .writing-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .writing-sidebar{
+    position:sticky;
+    top:120px;
+    background:var(--ink);
+    color:var(--paper);
+    padding:32px;
+  }
+  .writing-sidebar h4{
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:6px;
+    padding-bottom:0;
+  }
+  .writing-sidebar .ar{
+    color:rgba(246,241,231,0.7);
+    margin-bottom:20px;
+    padding-bottom:16px;
+    border-bottom:1px solid rgba(246,241,231,0.2);
+    font-size:14px;
+  }
+  .writing-nav{list-style:none}
+  .writing-nav li{
+    padding:12px 0;
+    border-bottom:1px solid rgba(246,241,231,0.1);
+    cursor:pointer;
+    font-size:14px;
+    transition:all 0.3s;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .writing-nav li:hover{color:var(--gold);padding-left:8px}
+  .writing-nav li.active{color:var(--gold)}
+  .writing-nav li > div{display:flex;flex-direction:column;gap:2px}
+  .writing-nav li .ar-inline{
+    color:rgba(246,241,231,0.5);
+    font-size:12px;
+  }
+  .writing-nav li.active .ar-inline{color:rgba(184,137,58,0.7)}
+  .writing-nav li::after{
+    content:'→';opacity:0;transition:all 0.3s;
+  }
+  .writing-nav li:hover::after,.writing-nav li.active::after{opacity:1}
+
+  .writing-content{
+    background:var(--paper);
+  }
+  .writing-panel{display:none;animation:fadeIn 0.5s}
+  .writing-panel.active{display:block}
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .writing-panel h3{
+    font-family:'Fraunces',serif;
+    font-size:42px;
+    font-weight:400;
+    line-height:1.1;
+    margin-bottom:8px;
+  }
+  .writing-panel h3 em{font-style:italic;color:var(--burgundy)}
+  .writing-panel > .ar{
+    font-size:22px;margin-bottom:20px;
+    font-family:'Amiri',serif;
+    color:var(--burgundy);
+  }
+  .writing-panel > p{
+    font-size:17px;
+    color:var(--text-muted);
+    margin-bottom:8px;
+    line-height:1.7;
+  }
+  .writing-panel > p + .ar{margin-bottom:32px;font-size:16px}
+  .structure-box{
+    background:var(--cream);
+    border-left:4px solid var(--gold);
+    padding:28px 32px;
+    margin:24px 0;
+  }
+  .structure-box h5{
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:4px;
+    color:var(--ink);
+  }
+  .structure-box h5 + .ar{
+    margin-bottom:16px;
+    color:var(--burgundy);
+    font-size:15px;
+  }
+  .structure-box ol,.structure-box ul{
+    padding-left:20px;
+  }
+  .structure-box li{
+    margin-bottom:14px;
+    font-size:15px;
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .structure-box li strong{
+    color:var(--burgundy);
+    font-weight:600;
+  }
+  .structure-box li .ar-small{
+    color:var(--text-muted);font-size:14px;margin-top:2px;
+  }
+  .example-block{
+    background:var(--ink);
+    color:var(--paper);
+    padding:32px;
+    margin:32px 0;
+    font-family:'Fraunces',serif;
+    font-size:16px;
+    line-height:1.8;
+    position:relative;
+  }
+  .example-block::before{
+    content:'EXAMPLE · مثال';
+    position:absolute;
+    top:-10px;left:24px;
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:2px;
+    padding:4px 12px;
+    font-weight:600;
+  }
+  .example-block p{margin-bottom:12px}
+  .phrases-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:16px;
+    margin:24px 0;
+  }
+  .phrase-card{
+    background:var(--cream);
+    padding:20px;
+    border:1px solid var(--line);
+  }
+  .phrase-card h6{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    color:var(--gold);
+    letter-spacing:1.5px;
+    margin-bottom:4px;
+  }
+  .phrase-card h6 + .ar-small{
+    color:var(--burgundy);margin-bottom:12px;font-size:13px;
+  }
+  .phrase-card ul{list-style:none;padding:0}
+  .phrase-card li{
+    font-size:14px;
+    padding:6px 0;
+    border-bottom:1px dotted var(--line);
+    font-style:italic;
+    color:var(--ink);
+  }
+  .phrase-card li:last-child{border-bottom:none}
+  .phrase-card li .ar-small{font-style:normal;font-size:12px;color:var(--text-faint)}
+
+  /* === LANGUAGE SECTION === */
+  #language{background:var(--paper);position:relative}
+  .lang-layout{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:50px;
+    align-items:start;
+  }
+  .lang-sidebar{
+    position:sticky;top:120px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:24px;
+  }
+  .lang-sidebar h4{
+    font-family:'Fraunces',serif;
+    font-size:18px;font-weight:600;
+    margin-bottom:2px;
+  }
+  .lang-sidebar .ar{
+    color:var(--burgundy);font-size:14px;
+    margin-bottom:18px;padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .lang-nav{list-style:none}
+  .lang-nav li{
+    padding:10px 0;
+    cursor:pointer;font-size:14px;
+    color:var(--ink);
+    transition:all 0.3s;
+    border-bottom:1px dotted var(--line);
+    display:flex;flex-direction:column;gap:2px;
+  }
+  .lang-nav li:last-child{border-bottom:none}
+  .lang-nav li:hover{color:var(--burgundy);padding-left:6px}
+  .lang-nav li.active{color:var(--burgundy);font-weight:600}
+  .lang-nav li .ar-inline{font-size:12px;color:var(--text-faint);font-weight:400}
+  .lang-nav li.active .ar-inline{color:var(--gold)}
+
+  .lang-panel{display:none;animation:fadeIn 0.5s}
+  .lang-panel.active{display:block}
+  .lang-panel > h3{
+    font-family:'Fraunces',serif;
+    font-size:38px;font-weight:400;
+    line-height:1.1;margin-bottom:6px;
+  }
+  .lang-panel > h3 em{font-style:italic;color:var(--burgundy)}
+  .lang-panel > .ar{
+    font-size:20px;margin-bottom:18px;
+    color:var(--burgundy);
+    font-family:'Amiri',serif;
+  }
+  .lang-panel > p{
+    font-size:16px;color:var(--text-muted);
+    line-height:1.7;margin-bottom:6px;
+  }
+  .lang-panel > p + .ar{margin-bottom:28px;font-size:15px}
+
+  .formula-box{
+    background:var(--ink);color:var(--paper);
+    padding:24px 28px;
+    margin:20px 0;
+    font-family:'JetBrains Mono',monospace;
+    font-size:15px;line-height:1.8;
+    border-left:4px solid var(--gold);
+  }
+  .formula-box .label{
+    color:var(--gold);font-size:11px;
+    text-transform:uppercase;letter-spacing:2px;
+    margin-bottom:10px;display:block;
+  }
+  .formula-box .formula{
+    font-size:17px;font-weight:500;
+  }
+  .formula-box .formula em{
+    color:var(--gold);font-style:normal;font-weight:600;
+  }
+
+  .rule-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:14px;
+    margin:24px 0;
+  }
+  .rule-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:20px 22px;
+  }
+  .rule-card h6{
+    font-family:'Fraunces',serif;
+    font-size:17px;font-weight:600;
+    margin-bottom:4px;color:var(--ink);
+  }
+  .rule-card h6 + .ar-small{
+    margin-bottom:12px;color:var(--burgundy);
+    font-size:13px;
+  }
+  .rule-card .ex{
+    font-family:'Fraunces',serif;
+    font-size:14px;font-style:italic;
+    color:var(--text-muted);line-height:1.6;
+    padding:8px 12px;
+    background:rgba(184,137,58,0.08);
+    border-left:2px solid var(--gold);
+    margin-top:8px;
+  }
+
+  /* Tenses table */
+  .tense-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+    font-size:14px;
+  }
+  .tense-table th{
+    background:var(--ink);color:var(--paper);
+    padding:12px;text-align:left;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;text-transform:uppercase;
+    letter-spacing:1.5px;font-weight:500;
+  }
+  .tense-table td{
+    padding:14px 12px;
+    border-bottom:1px solid var(--line);
+    background:var(--cream);
+  }
+  .tense-table tr:nth-child(even) td{background:var(--paper)}
+  .tense-table .name{
+    font-family:'Fraunces',serif;
+    font-weight:600;color:var(--burgundy);
+  }
+  .tense-table .form{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;color:var(--ink);
+  }
+  .tense-table .ex{
+    font-style:italic;color:var(--text-muted);
+  }
+
+  /* Verb table - irregular verbs */
+  .verbs-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+    font-size:14px;
+  }
+  .verbs-table th{
+    background:var(--burgundy);color:var(--paper);
+    padding:12px;text-align:left;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;text-transform:uppercase;
+    letter-spacing:1.5px;
+  }
+  .verbs-table td{
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+    font-family:'Fraunces',serif;
+    font-size:15px;
+  }
+  .verbs-table td:first-child{
+    font-weight:600;color:var(--ink);
+  }
+  .verbs-table td:nth-child(2),
+  .verbs-table td:nth-child(3){
+    color:var(--burgundy);font-style:italic;
+  }
+  .verbs-table td:nth-child(4){
+    color:var(--text-faint);font-style:normal;
+    font-family:'Noto Naskh Arabic',serif;
+    direction:rtl;text-align:right;
+  }
+  .verbs-table tr:hover td{background:var(--cream)}
+
+  /* Phrasal verbs */
+  .phrasal-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:12px;
+    margin:20px 0;
+  }
+  .phrasal-item{
+    background:var(--cream);
+    padding:16px 18px;
+    border-left:3px solid var(--gold);
+    transition:all 0.3s;
+  }
+  .phrasal-item:hover{
+    background:var(--soft);
+    transform:translateX(4px);
+  }
+  .phrasal-item .pv{
+    font-family:'Fraunces',serif;
+    font-size:17px;font-weight:600;
+    color:var(--ink);
+    margin-bottom:4px;
+  }
+  .phrasal-item .meaning{
+    font-size:13px;color:var(--text-muted);
+    margin-bottom:4px;
+  }
+  .phrasal-item .ar-small{
+    margin:4px 0;color:var(--burgundy);font-size:13px;
+  }
+  .phrasal-item .ex{
+    font-size:12px;font-style:italic;
+    color:var(--text-faint);margin-top:6px;
+    padding-top:6px;
+    border-top:1px dotted var(--line);
+  }
+
+  /* Linkers */
+  .linker-cats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:14px;
+    margin:20px 0;
+  }
+  .linker-cat{
+    background:var(--ink);color:var(--paper);
+    padding:20px;
+  }
+  .linker-cat h6{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:1.5px;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:2px;
+  }
+  .linker-cat h6 + .ar-small{
+    color:rgba(184,137,58,0.7);
+    margin-bottom:12px;font-size:12px;
+  }
+  .linker-cat ul{list-style:none;padding:0}
+  .linker-cat li{
+    font-family:'Fraunces',serif;
+    font-size:14px;
+    padding:5px 0;
+    color:var(--paper);
+    border-bottom:1px solid rgba(246,241,231,0.1);
+  }
+  .linker-cat li:last-child{border-bottom:none}
+
+  /* === TIPS === */
+  #tips{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  #tips::before{
+    content:'A B C';
+    position:absolute;
+    top:5%;right:-5%;
+    font-family:'Fraunces',serif;
+    font-size:300px;
+    font-weight:300;
+    color:rgba(246,241,231,0.03);
+    letter-spacing:20px;
+  }
+  #tips .section-header h2{color:var(--paper)}
+  #tips .section-header h2 em{color:var(--gold)}
+  #tips .section-header p{color:rgba(246,241,231,0.7)}
+  #tips .section-header .ar{color:rgba(184,137,58,0.85);font-size:18px}
+  .tips-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1px;
+    background:rgba(246,241,231,0.1);
+    border:1px solid rgba(246,241,231,0.1);
+    position:relative;z-index:2;
+  }
+  .tip-card{
+    background:var(--ink);
+    padding:36px 32px;
+    transition:background 0.3s;
+  }
+  .tip-card:hover{background:#252119}
+  .tip-num{
+    font-family:'Fraunces',serif;
+    font-size:48px;
+    font-style:italic;
+    font-weight:300;
+    color:var(--gold);
+    line-height:1;
+    margin-bottom:16px;
+  }
+  .tip-card h4{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    font-weight:500;
+    margin-bottom:4px;
+  }
+  .tip-card h4 + .ar{
+    color:var(--gold);font-size:15px;margin-bottom:12px;
+  }
+  .tip-card p{
+    font-size:14px;
+    color:rgba(246,241,231,0.7);
+    line-height:1.6;
+    margin-bottom:6px;
+  }
+  .tip-card p + .ar{color:rgba(246,241,231,0.55);font-size:13px}
+
+  /* === EXAM === */
+  #exam .exam-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .exam-visual{
+    background:var(--cream);
+    padding:48px;
+    border:1px solid var(--line);
+    position:relative;
+  }
+  .exam-paper{
+    background:var(--paper);
+    padding:32px;
+    border:1px solid var(--line);
+    transform:rotate(-1deg);
+    box-shadow:8px 8px 0 var(--soft);
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    line-height:1.8;
+  }
+  .exam-paper .header{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:12px;
+    margin-bottom:16px;
+    font-weight:600;
+  }
+  .exam-paper .section-line{
+    display:flex;justify-content:space-between;
+    margin:8px 0;
+    color:var(--text-muted);
+  }
+  .exam-paper .grade{
+    text-align:right;margin-top:16px;padding-top:12px;
+    border-top:1px dashed var(--line);
+    font-size:16px;font-weight:600;color:var(--burgundy);
+  }
+  .exam-details{padding:20px 0}
+  .exam-details h2{
+    font-family:'Fraunces',serif;
+    font-size:48px;
+    font-weight:400;
+    line-height:1.1;
+    margin-bottom:8px;
+    letter-spacing:-1px;
+  }
+  .exam-details h2 + .ar{
+    font-size:22px;color:var(--burgundy);margin-bottom:24px;
+  }
+  .exam-details > p{color:var(--text-muted);font-size:16px;margin-bottom:8px}
+  .exam-details > p + .ar{margin-bottom:24px;font-size:15px}
+  .exam-breakdown{
+    margin:32px 0;
+    border-top:1px solid var(--line);
+  }
+  .breakdown-item{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .breakdown-item .label-wrap{display:flex;flex-direction:column;gap:2px}
+  .breakdown-item .label{
+    font-weight:500;
+    color:var(--ink);
+  }
+  .breakdown-item .ar-inline{font-size:14px;color:var(--moss)}
+  .breakdown-item .value{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    color:var(--burgundy);
+    font-weight:500;
+  }
+
+  /* === FOOTER === */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:80px 5% 40px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:60px;
+    margin-bottom:60px;
+  }
+  .footer-brand h3{
+    font-family:'Fraunces',serif;
+    font-size:32px;
+    font-weight:500;
+    margin-bottom:16px;
+  }
+  .footer-brand p{
+    color:rgba(246,241,231,0.6);
+    font-size:14px;
+    max-width:320px;
+    line-height:1.7;
+    margin-bottom:8px;
+  }
+  .footer-brand .ar{color:rgba(184,137,58,0.7);font-size:14px}
+  footer h5{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--gold);
+    margin-bottom:20px;
+  }
+  footer ul{list-style:none}
+  footer ul li{
+    padding:6px 0;
+    font-size:14px;
+    color:rgba(246,241,231,0.7);
+    cursor:pointer;
+    transition:color 0.3s;
+  }
+  footer ul li:hover{color:var(--gold)}
+  .footer-bottom{
+    border-top:1px solid rgba(246,241,231,0.1);
+    padding-top:30px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:13px;
+    color:rgba(246,241,231,0.5);
+  }
+
+  /* === RESPONSIVE === */
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;padding-top:120px}
+    .writing-layout{grid-template-columns:1fr}
+    .writing-sidebar{position:relative;top:0}
+    .lang-layout{grid-template-columns:1fr}
+    .lang-sidebar{position:relative;top:0}
+    #exam .exam-layout{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+    .nav-links{display:none}
+    .menu-toggle{display:block}
+    .nav-links.open{
+      display:flex;flex-direction:column;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);
+      padding:20px 5%;gap:16px;
+      border-bottom:1px solid var(--line);
+    }
+  }
+  @media(max-width:600px){
+    .footer-grid{grid-template-columns:1fr}
+    .hero-card{padding:28px}
+    section{padding:70px 5%}
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     ACADEMIC × DYNAMIC ENHANCEMENTS
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Paper grain texture - subtle academic feel */
+  body::before{
+    content:'';
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    pointer-events:none;
+    z-index:1000;
+    opacity:var(--grain-opacity);
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+    transition:opacity 0.5s var(--ease-out);
+  }
+  [data-theme="dark"] body::before{mix-blend-mode:screen}
+
+  /* Reading progress bar */
+  .progress-bar{
+    position:fixed;
+    top:0;left:0;
+    height:2px;
+    width:0%;
+    background:linear-gradient(90deg,var(--gold),var(--burgundy));
+    z-index:9999;
+    transition:width 0.1s linear;
+    box-shadow:0 0 8px rgba(184,137,58,0.5);
+  }
+
+  /* Custom cursor follower (desktop only) */
+  .cursor-dot{
+    position:fixed;
+    top:0;left:0;
+    width:8px;height:8px;
+    background:var(--burgundy);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9998;
+    transform:translate(-50%,-50%);
+    transition:width 0.3s var(--ease-out),height 0.3s var(--ease-out),background 0.3s;
+    mix-blend-mode:multiply;
+  }
+  .cursor-dot.hover{
+    width:48px;height:48px;
+    background:rgba(184,137,58,0.3);
+  }
+  @media(hover:none),(max-width:900px){
+    .cursor-dot{display:none}
+  }
+
+  /* Page-load entrance */
+  @keyframes pageRise{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  body{animation:pageRise 0.8s var(--ease-out)}
+
+  /* Scroll reveal - elements fade up when entering viewport */
+  .reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity 1s var(--ease-out),transform 1s var(--ease-out);
+  }
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .reveal-delay-1{transition-delay:0.1s}
+  .reveal-delay-2{transition-delay:0.2s}
+  .reveal-delay-3{transition-delay:0.3s}
+  .reveal-delay-4{transition-delay:0.4s}
+
+  /* Hero h1 staggered word reveal */
+  .hero h1 .word{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(60px) rotate(2deg);
+    animation:wordRise 1.2s var(--ease-out) forwards;
+  }
+  .hero h1 .word:nth-child(1){animation-delay:0.3s}
+  .hero h1 .word:nth-child(2){animation-delay:0.45s}
+  .hero h1 .word:nth-child(3){animation-delay:0.6s}
+  .hero h1 .word:nth-child(4){animation-delay:0.75s}
+  .hero h1 .word:nth-child(5){animation-delay:0.9s}
+  .hero h1 .word:nth-child(6){animation-delay:1.05s}
+  @keyframes wordRise{
+    to{opacity:1;transform:translateY(0) rotate(0)}
+  }
+
+  /* Academic section numbers (§ I, § II...) */
+  .section-num{
+    position:absolute;
+    top:60px;
+    right:5%;
+    font-family:'Fraunces',serif;
+    font-size:140px;
+    font-weight:300;
+    font-style:italic;
+    color:rgba(26,24,20,0.04);
+    line-height:1;
+    pointer-events:none;
+    user-select:none;
+    z-index:0;
+  }
+  #tips .section-num{color:rgba(246,241,231,0.06)}
+  section{position:relative}
+  section > *{position:relative;z-index:1}
+
+  /* Stat counter (large dramatic numbers) */
+  .stat .num{
+    transition:color 0.5s,transform 0.5s var(--ease-out);
+  }
+  .stat:hover .num{
+    color:var(--gold);
+    transform:scale(1.1) translateY(-2px);
+  }
+
+  /* Refined link underline (animated draw) */
+  .nav-links a::after{
+    transition:width 0.5s var(--ease-out);
+  }
+
+  /* Magnetic buttons - subtle 3D lift */
+  .btn{
+    position:relative;
+    overflow:hidden;
+    transition:transform 0.4s var(--ease-out),
+               background 0.4s,
+               color 0.4s,
+               box-shadow 0.4s var(--ease-out);
+  }
+  .btn::before{
+    content:'';
+    position:absolute;
+    top:50%;left:50%;
+    width:0;height:0;
+    background:rgba(255,255,255,0.15);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    transition:width 0.6s var(--ease-out),height 0.6s var(--ease-out);
+  }
+  .btn:hover::before{width:400px;height:400px}
+  .btn-primary:hover{
+    box-shadow:0 12px 30px rgba(139,44,44,0.3);
+  }
+  .btn > *{position:relative;z-index:1}
+
+  /* Hero card with subtle floating animation */
+  .hero-card{
+    transition:transform 0.6s var(--ease-out),box-shadow 0.6s var(--ease-out);
+  }
+  .hero-card:hover{
+    transform:translateY(-6px);
+    box-shadow:24px 24px 0 var(--soft),0 30px 60px rgba(26,24,20,0.1);
+  }
+
+  /* Unit cards - more dramatic hover */
+  .unit-card{
+    transition:transform 0.5s var(--ease-out),
+               box-shadow 0.5s var(--ease-out),
+               border-color 0.5s;
+  }
+  .unit-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    box-shadow:0 25px 50px rgba(26,24,20,0.12);
+  }
+  .unit-card h3{
+    transition:color 0.4s;
+  }
+  .unit-card:hover h3{color:var(--burgundy)}
+
+  /* Academic ornament between sections */
+  .ornament{
+    text-align:center;
+    margin:0 auto;
+    padding:30px 0 0;
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    color:var(--gold);
+    letter-spacing:8px;
+    opacity:0.6;
+  }
+  .ornament::before{
+    content:'— ❦ —';
+  }
+
+  /* Drop cap for first paragraph in section headers */
+  .has-dropcap::first-letter{
+    font-family:'Fraunces',serif;
+    font-size:5em;
+    float:left;
+    line-height:0.85;
+    margin:8px 12px 0 0;
+    color:var(--burgundy);
+    font-weight:500;
+    font-style:italic;
+  }
+
+  /* Animated section header underline */
+  .section-header h2{
+    position:relative;
+    display:inline-block;
+  }
+  .section-header h2::after{
+    content:'';
+    position:absolute;
+    bottom:-12px;left:0;
+    width:0;
+    height:2px;
+    background:var(--gold);
+    transition:width 1.2s var(--ease-out) 0.3s;
+  }
+  .reveal.in-view .section-header h2::after,
+  .section-header.reveal.in-view h2::after{width:80px}
+
+  /* Pull-quote / marginalia style */
+  .marginalia{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--gold);
+    padding-left:16px;
+    border-left:2px solid var(--gold);
+    margin:20px 0;
+  }
+
+  /* Subtle parallax on hero decorative shapes */
+  .hero-shape{
+    position:absolute;
+    pointer-events:none;
+    opacity:0.06;
+    font-family:'Fraunces',serif;
+    font-weight:300;
+    font-style:italic;
+  }
+  .hero-shape.s1{
+    top:15%;right:8%;
+    font-size:280px;
+    color:var(--burgundy);
+    transform:rotate(-15deg);
+  }
+  .hero-shape.s2{
+    bottom:10%;left:2%;
+    font-size:140px;
+    color:var(--gold);
+  }
+
+  /* Animated quote marks for example blocks */
+  .example-block{
+    transition:transform 0.4s var(--ease-out),box-shadow 0.4s;
+  }
+  .example-block:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 40px rgba(26,24,20,0.2);
+  }
+
+  /* Tip card with academic numbering */
+  .tip-num{
+    transition:transform 0.5s var(--ease-out),color 0.5s;
+    display:inline-block;
+  }
+  .tip-card:hover .tip-num{
+    transform:rotate(-8deg) scale(1.15);
+    color:var(--paper);
+    text-shadow:3px 3px 0 var(--gold);
+  }
+
+  /* Sticky-side section indicator (right edge) */
+  .section-indicator{
+    position:fixed;
+    right:24px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:90;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .section-indicator a{
+    width:8px;height:8px;
+    background:rgba(26,24,20,0.2);
+    border-radius:50%;
+    transition:all 0.4s var(--ease-out);
+    position:relative;
+    cursor:pointer;
+  }
+  .section-indicator a:hover{
+    background:var(--gold);
+    transform:scale(1.5);
+  }
+  .section-indicator a.active{
+    background:var(--burgundy);
+    width:8px;height:24px;
+    border-radius:4px;
+  }
+  .section-indicator a::after{
+    content:attr(data-label);
+    position:absolute;
+    right:20px;top:50%;
+    transform:translateY(-50%) translateX(10px);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--ink);
+    background:var(--paper);
+    padding:6px 10px;
+    border:1px solid var(--line);
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:all 0.3s;
+  }
+  .section-indicator a:hover::after{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+  }
+  @media(max-width:1100px){.section-indicator{display:none}}
+
+  /* Lang toggle pulse on first load */
+  @keyframes attentionPulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(184,137,58,0.6)}
+    50%{box-shadow:0 0 0 8px rgba(184,137,58,0)}
+  }
+  .lang-toggle{
+    animation:attentionPulse 2.5s ease-in-out 2s 2;
+  }
+
+  /* Logo subtle rotation on hover */
+  .logo-mark{
+    transition:transform 0.6s var(--ease-out),background 0.4s;
+  }
+  .logo:hover .logo-mark{
+    transform:rotate(360deg);
+    background:var(--burgundy);
+  }
+
+  /* Sidebar nav items - elegant slide */
+  .writing-nav li,.lang-nav li{
+    transition:all 0.4s var(--ease-out);
+    position:relative;
+  }
+  .writing-nav li::before,.lang-nav li::before{
+    content:'';
+    position:absolute;
+    left:-12px;top:50%;
+    transform:translateY(-50%);
+    width:0;height:1px;
+    background:var(--gold);
+    transition:width 0.4s var(--ease-out);
+  }
+  .writing-nav li.active::before,.lang-nav li.active::before{width:8px}
+  .writing-nav li.active,.lang-nav li.active{padding-left:14px}
+
+  /* Verb table rows reveal */
+  .verbs-table tr{
+    transition:background 0.3s,transform 0.3s var(--ease-out);
+  }
+  .verbs-table tr:hover{
+    transform:translateX(4px);
+  }
+
+  /* Phrasal items - cascading hover */
+  .phrasal-item{
+    transition:all 0.4s var(--ease-out);
+  }
+  .phrasal-item:hover{
+    background:var(--ink);
+    color:var(--paper);
+    transform:translateX(8px) translateY(-2px);
+    box-shadow:0 10px 20px rgba(26,24,20,0.15);
+    border-left-color:var(--gold);
+  }
+  .phrasal-item:hover .pv{color:var(--gold)}
+  .phrasal-item:hover .meaning,
+  .phrasal-item:hover .ex{color:rgba(246,241,231,0.7)}
+
+  /* Smooth section transitions */
+  section{
+    transition:background 0.5s;
+  }
+
+  /* Hero gradient mesh - more sophisticated */
+  .hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(ellipse at 20% 80%,rgba(184,137,58,0.04),transparent 50%),
+      radial-gradient(ellipse at 80% 20%,rgba(139,44,44,0.06),transparent 60%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Footer animated rule */
+  .footer-bottom{
+    position:relative;
+  }
+  .footer-bottom::before{
+    content:'';
+    position:absolute;
+    top:0;left:0;
+    height:1px;
+    width:0;
+    background:linear-gradient(90deg,var(--gold),transparent);
+    animation:drawLine 2s var(--ease-out) forwards 0.5s;
+  }
+  @keyframes drawLine{
+    to{width:100%}
+  }
+
+  /* Image-less academic divider */
+  .academic-divider{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin:60px auto;
+    max-width:600px;
+    color:var(--gold);
+  }
+  .academic-divider::before,
+  .academic-divider::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--line),transparent);
+  }
+  .academic-divider span{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    letter-spacing:2px;
+  }
+
+  /* Print-style table borders */
+  .verbs-table,.tense-table{
+    border-top:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+  }
+
+  /* Selection enhancement */
+  ::selection{
+    background:var(--burgundy);
+    color:var(--paper);
+    text-shadow:none;
+  }
+
+  /* Disable animations for reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:0.01ms !important;
+      transition-duration:0.01ms !important;
+    }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     PREMIUM UI POLISH — Final refinements
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Accessible focus rings */
+  *:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+  button:focus-visible,a:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:4px;
+  }
+
+  /* Refined navigation in both themes */
+  nav{
+    transition:background 0.5s,border-color 0.5s,box-shadow 0.4s;
+  }
+  [data-theme="dark"] nav{
+    background:rgba(20,17,13,0.85);
+    border-bottom-color:var(--line);
+  }
+
+  /* Hero gradient mesh — refined for both themes */
+  [data-theme="dark"] .hero::before{
+    background:
+      radial-gradient(circle at 70% 30%, rgba(212,166,81,0.06), transparent 50%),
+      radial-gradient(circle at 30% 70%, rgba(232,144,144,0.04), transparent 50%);
+  }
+  [data-theme="dark"] .hero::after{
+    background:
+      radial-gradient(ellipse at 20% 80%,rgba(212,166,81,0.03),transparent 50%),
+      radial-gradient(ellipse at 80% 20%,rgba(232,144,144,0.05),transparent 60%);
+  }
+
+  /* Hero card shadow refined in dark */
+  [data-theme="dark"] .hero-card{
+    box-shadow:20px 20px 0 var(--soft),0 0 40px rgba(212,166,81,0.05);
+  }
+  [data-theme="dark"] .hero-card:hover{
+    box-shadow:24px 24px 0 var(--soft),0 30px 60px rgba(0,0,0,0.4);
+  }
+
+  /* Unit cards - elevated in dark */
+  [data-theme="dark"] .unit-card{
+    background:var(--cream);
+    border-color:var(--line);
+  }
+  [data-theme="dark"] .unit-card:hover{
+    box-shadow:0 25px 50px rgba(0,0,0,0.4);
+    border-color:var(--gold);
+  }
+
+  /* Test cards in dark mode */
+  [data-theme="dark"] .test-card{
+    background:var(--cream);
+  }
+
+  /* Tip cards "card-on-card" elevation in dark */
+  [data-theme="dark"] .tip-card{
+    background:var(--cream);
+  }
+  [data-theme="dark"] .tip-card:hover{
+    background:var(--soft);
+  }
+  [data-theme="dark"] .tips-grid{
+    background:var(--line);
+    border-color:var(--line);
+  }
+
+  /* Linker cards - in dark mode they should be elevated */
+  [data-theme="dark"] .linker-cat{
+    background:var(--cream);
+  }
+  [data-theme="dark"] .linker-cat li{
+    border-bottom-color:rgba(212,166,81,0.1);
+  }
+
+  /* Writing sidebar in dark — adjust contrast */
+  [data-theme="dark"] .writing-sidebar{
+    background:var(--cream);
+    color:var(--ink);
+  }
+  [data-theme="dark"] .writing-sidebar h4{color:var(--ink)}
+  [data-theme="dark"] .writing-sidebar .ar{
+    color:var(--gold);
+    border-bottom-color:var(--line);
+  }
+  [data-theme="dark"] .writing-nav li{
+    border-bottom-color:var(--line);
+    color:var(--ink);
+  }
+  [data-theme="dark"] .writing-nav li .ar-inline{
+    color:var(--text-muted);
+  }
+  [data-theme="dark"] .writing-nav li.active{color:var(--gold)}
+  [data-theme="dark"] .writing-nav li.active .ar-inline{color:var(--gold);opacity:0.7}
+
+  /* Formula box - keep dark on dark theme too but with subtle border */
+  [data-theme="dark"] .formula-box{
+    background:#0c0a08;
+    border-left-color:var(--gold);
+  }
+  [data-theme="dark"] .example-block{
+    background:#0c0a08;
+  }
+
+  /* Quiz container in dark */
+  [data-theme="dark"] .quiz-container,
+  [data-theme="dark"] .results-container{
+    background:var(--cream);
+    box-shadow:30px 30px 0 var(--soft);
+  }
+  [data-theme="dark"] .q-option{
+    background:var(--soft);
+    color:var(--ink);
+  }
+  [data-theme="dark"] .q-option::before{
+    background:var(--cream);
+    color:var(--burgundy);
+    border-color:var(--line);
+  }
+  [data-theme="dark"] .q-option:hover:not(:disabled){
+    background:var(--paper);
+  }
+  [data-theme="dark"] .reading-text{
+    background:var(--soft);
+    color:var(--ink);
+  }
+  [data-theme="dark"] .level-badge{
+    background:var(--paper);
+  }
+
+  /* Q-feedback dark mode */
+  [data-theme="dark"] .q-feedback{
+    background:#0c0a08;
+  }
+
+  /* Exam paper - keep light feel for that "real paper" effect */
+  [data-theme="dark"] .exam-visual{
+    background:var(--cream);
+  }
+  [data-theme="dark"] .exam-paper{
+    background:var(--paper);
+    color:var(--ink);
+  }
+  [data-theme="dark"] .exam-paper .header{
+    border-bottom-color:var(--ink);
+  }
+  [data-theme="dark"] .exam-paper .section-line{
+    color:var(--text-muted);
+  }
+
+  /* Lang sidebar dark */
+  [data-theme="dark"] .lang-sidebar{
+    background:var(--cream);
+  }
+
+  /* Cursor dot — visible in both modes */
+  [data-theme="dark"] .cursor-dot{
+    background:var(--gold);
+    mix-blend-mode:screen;
+  }
+  [data-theme="dark"] .cursor-dot.hover{
+    background:rgba(212,166,81,0.3);
+  }
+
+  /* Section indicator in dark */
+  [data-theme="dark"] .section-indicator a{
+    background:rgba(240,230,214,0.2);
+  }
+  [data-theme="dark"] .section-indicator a:hover{
+    background:var(--gold);
+  }
+  [data-theme="dark"] .section-indicator a.active{
+    background:var(--burgundy);
+  }
+  [data-theme="dark"] .section-indicator a::after{
+    background:var(--cream);
+    color:var(--ink);
+    border-color:var(--line);
+  }
+
+  /* Btn secondary in dark */
+  [data-theme="dark"] .btn-secondary{
+    color:var(--ink);
+    border-color:var(--ink);
+  }
+  [data-theme="dark"] .btn-secondary:hover{
+    background:var(--ink);
+    color:var(--paper);
+  }
+
+  /* Tag adjustments in dark */
+  [data-theme="dark"] .tag{
+    background:var(--soft);
+    color:var(--ink);
+  }
+
+  /* Phrase / Rule / Structure cards in dark */
+  [data-theme="dark"] .phrase-card,
+  [data-theme="dark"] .rule-card,
+  [data-theme="dark"] .phrasal-item{
+    background:var(--cream);
+  }
+  [data-theme="dark"] .structure-box{
+    background:var(--cream);
+    border-left-color:var(--gold);
+  }
+  [data-theme="dark"] .rule-card .ex{
+    background:rgba(212,166,81,0.1);
+    border-left-color:var(--gold);
+  }
+
+  /* Verb / Tense tables in dark */
+  [data-theme="dark"] .verbs-table th{
+    background:#3a1717;
+  }
+  [data-theme="dark"] .tense-table th{
+    background:#0c0a08;
+  }
+  [data-theme="dark"] .tense-table td{
+    background:var(--soft);
+    color:var(--ink);
+    border-bottom-color:var(--line);
+  }
+  [data-theme="dark"] .tense-table tr:nth-child(even) td{
+    background:var(--cream);
+  }
+  [data-theme="dark"] .verbs-table td{
+    border-bottom-color:var(--line);
+    color:var(--ink);
+  }
+  [data-theme="dark"] .verbs-table tr:hover td{
+    background:var(--soft);
+  }
+  [data-theme="dark"] .verbs-table,
+  [data-theme="dark"] .tense-table{
+    border-top-color:var(--gold);
+    border-bottom-color:var(--gold);
+  }
+
+  /* Hero shape colors in dark - subtler */
+  [data-theme="dark"] .hero-shape{
+    opacity:0.04;
+  }
+
+  /* Section numbers - more visible in dark */
+  [data-theme="dark"] .section-num{
+    color:rgba(240,230,214,0.06);
+  }
+  [data-theme="dark"] #tips .section-num{
+    color:rgba(212,166,81,0.06);
+  }
+
+  /* Hero card label and other gold/burgundy in dark needs tuning */
+  [data-theme="dark"] .stat .num,
+  [data-theme="dark"] .breakdown-item .value,
+  [data-theme="dark"] .results-message em,
+  [data-theme="dark"] .score-text{
+    color:var(--burgundy);
+  }
+
+  /* Refined logo mark in dark mode */
+  [data-theme="dark"] .logo-mark{
+    background:var(--gold);
+    color:var(--paper);
+  }
+  [data-theme="dark"] .logo:hover .logo-mark{
+    background:var(--burgundy);
+  }
+
+  /* Refined progress bar */
+  [data-theme="dark"] .progress-bar{
+    box-shadow:0 0 12px rgba(212,166,81,0.6);
+  }
+
+  /* Refined breakdown items in dark */
+  [data-theme="dark"] .breakdown-item{
+    border-bottom-color:var(--line);
+  }
+
+  /* Better link styling */
+  .nav-links a{
+    transition:color 0.3s var(--ease-out);
+  }
+  [data-theme="dark"] .nav-links a{color:var(--ink)}
+  [data-theme="dark"] .nav-links a:hover{color:var(--gold)}
+
+  /* Footer dark adjustments — keep footer dark in both modes for editorial feel */
+  [data-theme="dark"] footer{
+    background:#0a0907;
+    border-top:1px solid var(--line);
+  }
+
+  /* Selection in dark */
+  [data-theme="dark"] ::selection{
+    background:var(--gold);
+    color:var(--paper);
+  }
+
+  /* Smoother text rendering */
+  body{
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* Mobile nav in dark */
+  [data-theme="dark"] .nav-links.open{
+    background:var(--cream);
+    border-bottom-color:var(--line);
+  }
+
+  /* Mobile responsive for theme button */
+  @media(max-width:600px){
+    .theme-toggle{width:36px;height:36px;font-size:14px}
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     TESTS SECTION — Quizzes
+     ═══════════════════════════════════════════════════════════ */
+
+  #tests{
+    background:linear-gradient(180deg,var(--paper) 0%,var(--cream) 100%);
+  }
+
+  /* Test selection hub */
+  .test-hub{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+  }
+  .test-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:32px 28px;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    transition:all 0.5s var(--ease-out);
+  }
+  .test-card::before{
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background:var(--gold);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform 0.5s var(--ease-out);
+  }
+  .test-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 25px 50px rgba(26,24,20,0.12);
+    border-color:var(--gold);
+  }
+  .test-card:hover::before{transform:scaleX(1)}
+  .test-icon{
+    font-family:'Fraunces',serif;
+    font-size:36px;
+    font-weight:300;
+    color:var(--burgundy);
+    margin-bottom:16px;
+    font-style:italic;
+    display:flex;align-items:baseline;gap:8px;
+  }
+  .test-icon .num{
+    font-size:48px;font-weight:500;
+  }
+  .test-icon .pts{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:1.5px;
+    color:var(--gold);text-transform:uppercase;
+    font-style:normal;font-weight:500;
+  }
+  .test-card h3{
+    font-family:'Fraunces',serif;
+    font-size:24px;font-weight:500;
+    margin-bottom:4px;line-height:1.2;
+  }
+  .test-card .ar-inline{
+    font-size:16px;color:var(--burgundy);
+    display:block;margin-bottom:14px;
+  }
+  .test-card p{
+    font-size:14px;color:var(--text-muted);
+    line-height:1.6;margin-bottom:6px;
+  }
+  .test-card .ar{font-size:13px;margin-bottom:24px}
+  .test-meta{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:18px;
+    border-top:1px dashed var(--line);
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--ink);
+  }
+  .test-meta .start-cta{
+    color:var(--burgundy);font-weight:600;
+    display:flex;align-items:center;gap:6px;
+    transition:gap 0.3s var(--ease-out);
+  }
+  .test-card:hover .start-cta{gap:12px;color:var(--gold)}
+
+  /* Quiz interface */
+  .quiz-container{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:50px;
+    max-width:820px;
+    margin:0 auto;
+    box-shadow:30px 30px 0 var(--soft);
+    animation:quizEnter 0.5s var(--ease-out);
+  }
+  @keyframes quizEnter{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .quiz-header{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:32px;padding-bottom:24px;
+    border-bottom:1px solid var(--line);
+    gap:20px;flex-wrap:wrap;
+  }
+  .quiz-title{
+    font-family:'Fraunces',serif;
+    font-size:22px;font-weight:500;
+  }
+  .quiz-title .ar-inline{
+    font-size:15px;color:var(--burgundy);
+    display:block;font-weight:400;margin-top:2px;
+  }
+  .quiz-exit{
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink);
+    padding:8px 16px;
+    cursor:pointer;
+    font-size:12px;
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:1px;
+    transition:all 0.3s;
+  }
+  .quiz-exit:hover{background:var(--ink);color:var(--paper)}
+
+  .quiz-progress{
+    margin-bottom:36px;
+  }
+  .quiz-progress-text{
+    display:flex;justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--text-muted);
+    margin-bottom:8px;
+  }
+  .quiz-progress-text .score{color:var(--burgundy);font-weight:600}
+  .quiz-progress-track{
+    height:4px;
+    background:var(--soft);
+    overflow:hidden;
+  }
+  .quiz-progress-fill{
+    height:100%;
+    background:linear-gradient(90deg,var(--gold),var(--burgundy));
+    transition:width 0.6s var(--ease-out);
+    width:0%;
+  }
+
+  /* Reading text */
+  .reading-text{
+    background:var(--cream);
+    border-left:4px solid var(--gold);
+    padding:24px 28px;
+    margin-bottom:32px;
+    font-family:'Fraunces',serif;
+    font-size:16px;
+    line-height:1.8;
+    color:var(--ink);
+    font-style:italic;
+  }
+  .reading-text-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--gold);
+    margin-bottom:12px;
+    font-style:normal;
+    font-weight:600;
+  }
+
+  /* Question */
+  .question-wrap{
+    animation:qSlide 0.4s var(--ease-out);
+  }
+  @keyframes qSlide{
+    from{opacity:0;transform:translateX(20px)}
+    to{opacity:1;transform:translateX(0)}
+  }
+  .q-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:14px;
+    font-weight:600;
+  }
+  .q-text{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    font-weight:500;
+    line-height:1.35;
+    margin-bottom:28px;
+    color:var(--ink);
+  }
+  .q-options{
+    display:flex;flex-direction:column;
+    gap:10px;
+    margin-bottom:24px;
+  }
+  .q-option{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:16px 20px;
+    cursor:pointer;
+    font-size:15px;
+    text-align:left;
+    font-family:'Fraunces',serif;
+    color:var(--ink);
+    display:flex;align-items:center;gap:14px;
+    transition:all 0.3s var(--ease-out);
+    position:relative;
+    width:100%;
+  }
+  .q-option::before{
+    content:attr(data-letter);
+    width:28px;height:28px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;font-weight:600;
+    color:var(--burgundy);
+    transition:all 0.3s;
+    flex-shrink:0;
+  }
+  .q-option:hover:not(:disabled){
+    background:var(--paper);
+    border-color:var(--gold);
+    transform:translateX(4px);
+  }
+  .q-option:hover:not(:disabled)::before{
+    background:var(--gold);color:var(--paper);border-color:var(--gold);
+  }
+  .q-option:disabled{cursor:default}
+  .q-option.correct{
+    background:var(--success-bg);
+    border-color:var(--success);
+    color:var(--success-text);
+  }
+  .q-option.correct::before{
+    background:var(--success);color:var(--paper);border-color:var(--success);
+    content:'✓';font-family:inherit;font-size:14px;
+  }
+  .q-option.wrong{
+    background:var(--error-bg);
+    border-color:var(--error);
+    color:var(--error-text);
+  }
+  .q-option.wrong::before{
+    background:var(--error);color:var(--paper);border-color:var(--error);
+    content:'✕';font-family:inherit;font-size:14px;
+  }
+
+  .q-feedback{
+    background:var(--ink);
+    color:var(--paper);
+    padding:20px 24px;
+    margin-bottom:24px;
+    border-left:4px solid var(--gold);
+    animation:fbIn 0.4s var(--ease-out);
+  }
+  @keyframes fbIn{
+    from{opacity:0;transform:translateY(-10px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .q-feedback .result-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .q-feedback p{
+    font-size:14px;line-height:1.6;
+    margin-bottom:6px;
+  }
+  .q-feedback .ar{
+    color:rgba(184,137,58,0.85);
+    margin-bottom:0;font-size:13px;
+  }
+
+  .q-actions{
+    display:flex;justify-content:flex-end;gap:12px;
+  }
+
+  /* Results screen */
+  .results-container{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:60px 50px;
+    max-width:720px;
+    margin:0 auto;
+    text-align:center;
+    box-shadow:30px 30px 0 var(--soft);
+    animation:quizEnter 0.6s var(--ease-out);
+  }
+  .score-circle{
+    width:200px;height:200px;
+    margin:0 auto 32px;
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .score-circle svg{
+    width:100%;height:100%;
+    transform:rotate(-90deg);
+  }
+  .score-circle .track{
+    fill:none;stroke:var(--soft);stroke-width:8;
+  }
+  .score-circle .fill{
+    fill:none;stroke:var(--burgundy);stroke-width:8;
+    stroke-linecap:round;
+    stroke-dasharray:565;
+    stroke-dashoffset:565;
+    transition:stroke-dashoffset 1.5s var(--ease-out) 0.3s;
+  }
+  .score-text{
+    position:absolute;
+    font-family:'Fraunces',serif;
+    font-size:56px;
+    font-weight:500;
+    color:var(--burgundy);
+    line-height:1;
+  }
+  .score-text .pct{font-size:24px;color:var(--gold);margin-left:2px;font-weight:400}
+
+  .level-badge{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--paper);
+    padding:10px 24px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+  }
+  .level-badge .gold{color:var(--gold)}
+
+  .results-message{
+    font-family:'Fraunces',serif;
+    font-size:30px;
+    font-weight:400;
+    line-height:1.3;
+    margin-bottom:8px;
+    color:var(--ink);
+  }
+  .results-message em{font-style:italic;color:var(--burgundy)}
+  .results-container .ar{
+    font-size:18px;color:var(--burgundy);
+    margin-bottom:32px;
+  }
+  .results-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin:32px 0;
+    padding:24px 0;
+    border-top:1px dashed var(--line);
+    border-bottom:1px dashed var(--line);
+  }
+  .results-stats .stat-item .v{
+    font-family:'Fraunces',serif;
+    font-size:32px;font-weight:500;
+    color:var(--ink);line-height:1;
+  }
+  .results-stats .stat-item .l{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--text-muted);
+    margin-top:6px;
+  }
+  .results-actions{
+    display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    margin-top:24px;
+  }
+
+  @media(max-width:640px){
+    .quiz-container,.results-container{padding:32px 24px;box-shadow:none}
+    .q-text{font-size:20px}
+    .score-circle{width:160px;height:160px}
+    .score-text{font-size:44px}
+    .results-message{font-size:22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Dynamic elements -->
+<div class="progress-bar" id="progressBar"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="section-indicator" id="sectionIndicator">
+  <a href="#home" data-label="Home" class="active"></a>
+  <a href="#courses" data-label="Courses"></a>
+  <a href="#language" data-label="Language"></a>
+  <a href="#writing" data-label="Writing"></a>
+  <a href="#tips" data-label="Tips"></a>
+  <a href="#tests" data-label="Tests"></a>
+  <a href="#exam" data-label="Exam"></a>
+</div>
+
+<nav>
+  <div class="logo">
+    <span class="logo-mark">E</span>
+    English Atelier
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#language">Language</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#tips">Tips</a></li>
+      <li><a href="#tests">Tests</a></li>
+      <li><a href="#exam">Exam</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode">
+      <span class="icon sun">☀</span>
+      <span class="icon moon">☾</span>
+    </button>
+    <button class="lang-toggle" id="langBtn" onclick="document.body.classList.toggle('hide-ar'); this.textContent = document.body.classList.contains('hide-ar') ? 'العربية' : 'EN only';">العربية</button>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-orb o1"></div>
+  <div class="hero-orb o2"></div>
+  <div class="hero-orb o3"></div>
+  <span class="hero-shape s1">A</span>
+  <span class="hero-shape s2">§</span>
+  <div class="hero-text">
+    <div class="sticker">✦ New · 2026 Edition</div>
+    <div class="hero-meta">A Companion for 2 Bac Students <span class="ar-inline" style="color:var(--text-muted);margin-right:10px">رفيقك في السنة الثانية باكالوريا</span></div>
+    <h1><span class="word">Master</span> <span class="word"><em>English</em></span> <span class="word">for</span> <span class="word">your</span> <span class="word underline">Baccalauréat</span><span class="word">.</span></h1>
+    <p>A complete digital atelier built for second-year Bac students — structured lessons aligned with the national syllabus, writing workshops, and exam strategies that actually work.</p>
+    <span class="ar">منصة تعليمية متكاملة لطلاب السنة الثانية باكالوريا — دروس منظمة وفق المنهج الوطني، ورشات للكتابة، واستراتيجيات فعّالة لاجتياز الامتحان الوطني بنجاح.</span>
+    <div class="hero-cta">
+      <a href="#courses" class="btn btn-primary">Explore Courses →</a>
+      <a href="#writing" class="btn btn-secondary">Writing Guide</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-card-label">— National Exam Aligned · متوافق مع الامتحان الوطني</div>
+    <h3>Everything you need from reading comprehension to writing production.</h3>
+    <span class="ar">كل ما تحتاجه من فهم النصوص إلى الإنتاج الكتابي.</span>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">10</div><div class="lbl">Core Units</div><div class="ar-small">وحدات أساسية</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">Writing Types</div><div class="ar-small">أنواع الكتابة</div></div>
+      <div class="stat"><div class="num">40+</div><div class="lbl">Useful Phrases</div><div class="ar-small">عبارات مفيدة</div></div>
+      <div class="stat"><div class="num">∞</div><div class="lbl">Practice</div><div class="ar-small">تدريب لا محدود</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Grammar <span class="marquee-star">✦</span> <em>Writing</em> <span class="marquee-star">✦</span> Vocabulary <span class="marquee-star">✦</span> <em>Phrasal Verbs</em> <span class="marquee-star">✦</span> Irregular Verbs <span class="marquee-star">✦</span> <em>National Exam</em> <span class="marquee-star">✦</span> 2 Bac <span class="marquee-star">✦</span></span>
+    <span class="marquee-item">Grammar <span class="marquee-star">✦</span> <em>Writing</em> <span class="marquee-star">✦</span> Vocabulary <span class="marquee-star">✦</span> <em>Phrasal Verbs</em> <span class="marquee-star">✦</span> Irregular Verbs <span class="marquee-star">✦</span> <em>National Exam</em> <span class="marquee-star">✦</span> 2 Bac <span class="marquee-star">✦</span></span>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section id="courses">
+  <div class="section-num">§ I</div>
+  <div class="section-header reveal">
+    <div class="section-tag">Curriculum · 2 Bac · المقرر الدراسي</div>
+    <h2>Ten units of <em>thoughtful</em> English.</h2>
+    <p>Each unit follows the official Moroccan 2nd Baccalauréat program — vocabulary, grammar focus, reading texts, and discussion themes prepared for the National Exam.</p>
+    <span class="ar">كل وحدة تتبع المنهج الرسمي للسنة الثانية باكالوريا في المغرب — المفردات، القواعد، نصوص القراءة، ومواضيع النقاش المُعدّة لاجتياز الامتحان الوطني.</span>
+  </div>
+  <div class="units-grid">
+    <div class="unit-card">
+      <div class="unit-num">UNIT 01</div>
+      <h3>Gains & Issues of Teenagers</h3>
+      <span class="ar-inline">مكاسب وقضايا المراهقين</span>
+      <p>Explore the rights, responsibilities, and modern challenges of teenage life. Vocabulary on identity, family, and society.</p>
+      <span class="ar">استكشاف حقوق المراهقين، مسؤولياتهم، وتحديات الحياة العصرية. مفردات حول الهوية والأسرة والمجتمع.</span>
+      <div class="unit-tags"><span class="tag">Identity</span><span class="tag">Society</span><span class="tag">Modal Verbs</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 02</div>
+      <h3>Advances in Science & Technology</h3>
+      <span class="ar-inline">التقدم في العلوم والتكنولوجيا</span>
+      <p>Discoveries, innovation, ethics of AI and biotechnology. Focus on passive voice and reported speech.</p>
+      <span class="ar">الاكتشافات، الابتكار، وأخلاقيات الذكاء الاصطناعي والتكنولوجيا الحيوية. التركيز على المبني للمجهول والكلام المنقول.</span>
+      <div class="unit-tags"><span class="tag">Innovation</span><span class="tag">Ethics</span><span class="tag">Passive</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 03</div>
+      <h3>International Organisations</h3>
+      <span class="ar-inline">المنظمات الدولية</span>
+      <p>The United Nations, UNESCO, UNICEF and their roles. Conditional sentences and formal vocabulary.</p>
+      <span class="ar">الأمم المتحدة، اليونسكو، اليونيسف وأدوارها. الجمل الشرطية والمفردات الرسمية.</span>
+      <div class="unit-tags"><span class="tag">UN</span><span class="tag">Diplomacy</span><span class="tag">Conditionals</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 04</div>
+      <h3>Brain Drain</h3>
+      <span class="ar-inline">هجرة الأدمغة</span>
+      <p>Migration of skilled workers, causes and consequences for developing countries. Cause/effect connectors.</p>
+      <span class="ar">هجرة الكفاءات، أسبابها ونتائجها على الدول النامية. أدوات الربط بين السبب والنتيجة.</span>
+      <div class="unit-tags"><span class="tag">Migration</span><span class="tag">Economy</span><span class="tag">Linkers</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 05</div>
+      <h3>Citizenship</h3>
+      <span class="ar-inline">المواطنة</span>
+      <p>Rights and duties, civic engagement, volunteering. Modals of obligation and necessity.</p>
+      <span class="ar">الحقوق والواجبات، المشاركة المدنية، والعمل التطوعي. أفعال الإلزام والضرورة.</span>
+      <div class="unit-tags"><span class="tag">Civic</span><span class="tag">Rights</span><span class="tag">Modals</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 06</div>
+      <h3>Sustainable Development</h3>
+      <span class="ar-inline">التنمية المستدامة</span>
+      <p>Environmental protection, renewable energy, climate change. The future tense and predictions.</p>
+      <span class="ar">حماية البيئة، الطاقات المتجددة، والتغير المناخي. زمن المستقبل والتوقعات.</span>
+      <div class="unit-tags"><span class="tag">Environment</span><span class="tag">Climate</span><span class="tag">Future</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 07</div>
+      <h3>Women & Power</h3>
+      <span class="ar-inline">المرأة والسلطة</span>
+      <p>Gender equality, women in leadership, historical perspectives. Relative clauses and biographies.</p>
+      <span class="ar">المساواة بين الجنسين، النساء في مواقع القيادة، ومنظورات تاريخية. الجمل الموصولة والسير الذاتية.</span>
+      <div class="unit-tags"><span class="tag">Equality</span><span class="tag">Leadership</span><span class="tag">Relative Clauses</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 08</div>
+      <h3>Humour</h3>
+      <span class="ar-inline">الفكاهة</span>
+      <p>Cultural perspectives on humor, comedy and satire. Idiomatic expressions and informal English.</p>
+      <span class="ar">منظورات ثقافية حول الفكاهة، الكوميديا والسخرية. التعابير الاصطلاحية والإنجليزية غير الرسمية.</span>
+      <div class="unit-tags"><span class="tag">Culture</span><span class="tag">Comedy</span><span class="tag">Idioms</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 09</div>
+      <h3>Cultural Issues & Values</h3>
+      <span class="ar-inline">القضايا الثقافية والقيم</span>
+      <p>Traditions, intercultural communication, globalization. Comparatives and superlatives.</p>
+      <span class="ar">التقاليد، التواصل بين الثقافات، والعولمة. صيغ المقارنة والتفضيل.</span>
+      <div class="unit-tags"><span class="tag">Culture</span><span class="tag">Globalization</span><span class="tag">Comparison</span></div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-num">UNIT 10</div>
+      <h3>Education & Schools of Thought</h3>
+      <span class="ar-inline">التعليم والمدارس الفكرية</span>
+      <p>Educational systems, philosophies of learning, the future of education. Articulating arguments.</p>
+      <span class="ar">الأنظمة التعليمية، فلسفات التعلم، ومستقبل التعليم. صياغة الحجج والبراهين.</span>
+      <div class="unit-tags"><span class="tag">Education</span><span class="tag">Philosophy</span><span class="tag">Arguments</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE -->
+<section id="language">
+  <div class="section-num">§ II</div>
+  <div class="section-header reveal">
+    <div class="section-tag">Language Toolkit · صندوق الأدوات اللغوية</div>
+    <h2>Grammar that <em>scores</em> points.</h2>
+    <p>Every grammar topic on the 2 Bac syllabus — tenses, modals, conditionals, passive, reported speech, phrasal verbs, and the essential irregular verbs list.</p>
+    <span class="ar">جميع موضوعات القواعد في برنامج السنة الثانية باكالوريا — الأزمنة، الأفعال الناقصة، الشرط، المبني للمجهول، الكلام المنقول، الأفعال المركبة، وقائمة الأفعال الشاذة الأساسية.</span>
+  </div>
+
+  <div class="lang-layout">
+    <aside class="lang-sidebar">
+      <h4>Topics</h4>
+      <span class="ar">المواضيع</span>
+      <ul class="lang-nav">
+        <li class="active" data-ltab="tenses"><span>Tenses</span><span class="ar-inline">الأزمنة</span></li>
+        <li data-ltab="irregular"><span>Irregular Verbs</span><span class="ar-inline">الأفعال الشاذة</span></li>
+        <li data-ltab="phrasal"><span>Phrasal Verbs</span><span class="ar-inline">الأفعال المركبة</span></li>
+        <li data-ltab="passive"><span>Passive Voice</span><span class="ar-inline">المبني للمجهول</span></li>
+        <li data-ltab="reported"><span>Reported Speech</span><span class="ar-inline">الكلام المنقول</span></li>
+        <li data-ltab="conditional"><span>Conditionals</span><span class="ar-inline">الجمل الشرطية</span></li>
+        <li data-ltab="modals"><span>Modal Verbs</span><span class="ar-inline">الأفعال الناقصة</span></li>
+        <li data-ltab="relative"><span>Relative Clauses</span><span class="ar-inline">الجمل الموصولة</span></li>
+        <li data-ltab="linkers"><span>Linkers</span><span class="ar-inline">أدوات الربط</span></li>
+      </ul>
+    </aside>
+
+    <div class="lang-content">
+
+      <!-- TENSES -->
+      <div class="lang-panel active" id="tenses">
+        <h3>The <em>Tenses</em></h3>
+        <span class="ar">الأزمنة في اللغة الإنجليزية</span>
+        <p>The five tenses you must master for the 2 Bac. Each one has a specific use — choose carefully.</p>
+        <span class="ar">الأزمنة الخمسة التي يجب إتقانها في السنة الثانية باكالوريا. كل زمن له استخدام محدد — اختر بعناية.</span>
+
+        <table class="tense-table">
+          <thead>
+            <tr><th>Tense · الزمن</th><th>Formula · الصيغة</th><th>Example · مثال</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">Present Simple<br><span style="font-family:'Noto Naskh Arabic';font-size:12px;color:var(--text-faint);direction:rtl;">المضارع البسيط</span></td><td class="form">S + V (s/es)</td><td class="ex">She studies English every day.</td></tr>
+            <tr><td class="name">Present Continuous<br><span style="font-family:'Noto Naskh Arabic';font-size:12px;color:var(--text-faint);direction:rtl;">المضارع المستمر</span></td><td class="form">S + am/is/are + V-ing</td><td class="ex">I am studying for my Bac now.</td></tr>
+            <tr><td class="name">Past Simple<br><span style="font-family:'Noto Naskh Arabic';font-size:12px;color:var(--text-faint);direction:rtl;">الماضي البسيط</span></td><td class="form">S + V2 (-ed / irregular)</td><td class="ex">He went to school yesterday.</td></tr>
+            <tr><td class="name">Past Continuous<br><span style="font-family:'Noto Naskh Arabic';font-size:12px;color:var(--text-faint);direction:rtl;">الماضي المستمر</span></td><td class="form">S + was/were + V-ing</td><td class="ex">She was reading when I called.</td></tr>
+            <tr><td class="name">Present Perfect<br><span style="font-family:'Noto Naskh Arabic';font-size:12px;color:var(--text-faint);direction:rtl;">المضارع التام</span></td><td class="form">S + have/has + V3</td><td class="ex">I have finished my homework.</td></tr>
+            <tr><td class="name">Past Perfect<br><span style="font-family:'Noto Naskh Arabic';font-size:12px;color:var(--text-faint);direction:rtl;">الماضي التام</span></td><td class="form">S + had + V3</td><td class="ex">She had left before I arrived.</td></tr>
+            <tr><td class="name">Future Simple<br><span style="font-family:'Noto Naskh Arabic';font-size:12px;color:var(--text-faint);direction:rtl;">المستقبل البسيط</span></td><td class="form">S + will + V</td><td class="ex">I will pass my Bac exam.</td></tr>
+            <tr><td class="name">Be going to<br><span style="font-family:'Noto Naskh Arabic';font-size:12px;color:var(--text-faint);direction:rtl;">المستقبل المخطط له</span></td><td class="form">S + am/is/are going to + V</td><td class="ex">We are going to study tonight.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="rule-grid">
+          <div class="rule-card">
+            <h6>Time markers — Present Simple</h6>
+            <span class="ar-small">إشارات زمن المضارع البسيط</span>
+            <div class="ex">always, usually, often, sometimes, never, every day/week</div>
+          </div>
+          <div class="rule-card">
+            <h6>Time markers — Past Simple</h6>
+            <span class="ar-small">إشارات الماضي البسيط</span>
+            <div class="ex">yesterday, last week, ago, in 2010, when</div>
+          </div>
+          <div class="rule-card">
+            <h6>Time markers — Present Perfect</h6>
+            <span class="ar-small">إشارات المضارع التام</span>
+            <div class="ex">just, already, yet, ever, never, since, for, recently</div>
+          </div>
+          <div class="rule-card">
+            <h6>Time markers — Future</h6>
+            <span class="ar-small">إشارات المستقبل</span>
+            <div class="ex">tomorrow, next week, soon, in 2030, later</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IRREGULAR VERBS -->
+      <div class="lang-panel" id="irregular">
+        <h3>The <em>Irregular</em> Verbs</h3>
+        <span class="ar">الأفعال الشاذة</span>
+        <p>Irregular verbs don't follow the "-ed" rule for past forms. You must memorize them. Here are the 50 most important for the 2 Bac.</p>
+        <span class="ar">الأفعال الشاذة لا تتبع قاعدة "-ed" في الماضي. يجب حفظها. إليك أهم 50 فعلاً للسنة الثانية باكالوريا.</span>
+
+        <table class="verbs-table">
+          <thead>
+            <tr>
+              <th>Base · المصدر</th>
+              <th>Past (V2) · الماضي</th>
+              <th>Past Participle (V3) · اسم المفعول</th>
+              <th>المعنى</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>be</td><td>was / were</td><td>been</td><td>يكون</td></tr>
+            <tr><td>become</td><td>became</td><td>become</td><td>يصبح</td></tr>
+            <tr><td>begin</td><td>began</td><td>begun</td><td>يبدأ</td></tr>
+            <tr><td>break</td><td>broke</td><td>broken</td><td>يكسر</td></tr>
+            <tr><td>bring</td><td>brought</td><td>brought</td><td>يُحضر</td></tr>
+            <tr><td>build</td><td>built</td><td>built</td><td>يبني</td></tr>
+            <tr><td>buy</td><td>bought</td><td>bought</td><td>يشتري</td></tr>
+            <tr><td>catch</td><td>caught</td><td>caught</td><td>يمسك</td></tr>
+            <tr><td>choose</td><td>chose</td><td>chosen</td><td>يختار</td></tr>
+            <tr><td>come</td><td>came</td><td>come</td><td>يأتي</td></tr>
+            <tr><td>cost</td><td>cost</td><td>cost</td><td>يُكلّف</td></tr>
+            <tr><td>cut</td><td>cut</td><td>cut</td><td>يقطع</td></tr>
+            <tr><td>do</td><td>did</td><td>done</td><td>يفعل</td></tr>
+            <tr><td>draw</td><td>drew</td><td>drawn</td><td>يرسم</td></tr>
+            <tr><td>drink</td><td>drank</td><td>drunk</td><td>يشرب</td></tr>
+            <tr><td>drive</td><td>drove</td><td>driven</td><td>يقود</td></tr>
+            <tr><td>eat</td><td>ate</td><td>eaten</td><td>يأكل</td></tr>
+            <tr><td>fall</td><td>fell</td><td>fallen</td><td>يسقط</td></tr>
+            <tr><td>feel</td><td>felt</td><td>felt</td><td>يشعر</td></tr>
+            <tr><td>fight</td><td>fought</td><td>fought</td><td>يقاتل</td></tr>
+            <tr><td>find</td><td>found</td><td>found</td><td>يجد</td></tr>
+            <tr><td>fly</td><td>flew</td><td>flown</td><td>يطير</td></tr>
+            <tr><td>forget</td><td>forgot</td><td>forgotten</td><td>ينسى</td></tr>
+            <tr><td>get</td><td>got</td><td>got / gotten</td><td>يحصل على</td></tr>
+            <tr><td>give</td><td>gave</td><td>given</td><td>يُعطي</td></tr>
+            <tr><td>go</td><td>went</td><td>gone</td><td>يذهب</td></tr>
+            <tr><td>grow</td><td>grew</td><td>grown</td><td>ينمو</td></tr>
+            <tr><td>have</td><td>had</td><td>had</td><td>يملك</td></tr>
+            <tr><td>hear</td><td>heard</td><td>heard</td><td>يسمع</td></tr>
+            <tr><td>hold</td><td>held</td><td>held</td><td>يُمسك</td></tr>
+            <tr><td>keep</td><td>kept</td><td>kept</td><td>يحتفظ</td></tr>
+            <tr><td>know</td><td>knew</td><td>known</td><td>يعرف</td></tr>
+            <tr><td>leave</td><td>left</td><td>left</td><td>يُغادر</td></tr>
+            <tr><td>lose</td><td>lost</td><td>lost</td><td>يخسر</td></tr>
+            <tr><td>make</td><td>made</td><td>made</td><td>يصنع</td></tr>
+            <tr><td>meet</td><td>met</td><td>met</td><td>يلتقي</td></tr>
+            <tr><td>pay</td><td>paid</td><td>paid</td><td>يدفع</td></tr>
+            <tr><td>put</td><td>put</td><td>put</td><td>يضع</td></tr>
+            <tr><td>read</td><td>read</td><td>read</td><td>يقرأ</td></tr>
+            <tr><td>run</td><td>ran</td><td>run</td><td>يجري</td></tr>
+            <tr><td>say</td><td>said</td><td>said</td><td>يقول</td></tr>
+            <tr><td>see</td><td>saw</td><td>seen</td><td>يرى</td></tr>
+            <tr><td>sell</td><td>sold</td><td>sold</td><td>يبيع</td></tr>
+            <tr><td>send</td><td>sent</td><td>sent</td><td>يُرسل</td></tr>
+            <tr><td>show</td><td>showed</td><td>shown</td><td>يُظهر</td></tr>
+            <tr><td>sing</td><td>sang</td><td>sung</td><td>يُغنّي</td></tr>
+            <tr><td>sleep</td><td>slept</td><td>slept</td><td>ينام</td></tr>
+            <tr><td>speak</td><td>spoke</td><td>spoken</td><td>يتحدث</td></tr>
+            <tr><td>spend</td><td>spent</td><td>spent</td><td>يُنفق / يقضي</td></tr>
+            <tr><td>stand</td><td>stood</td><td>stood</td><td>يقف</td></tr>
+            <tr><td>steal</td><td>stole</td><td>stolen</td><td>يسرق</td></tr>
+            <tr><td>swim</td><td>swam</td><td>swum</td><td>يسبح</td></tr>
+            <tr><td>take</td><td>took</td><td>taken</td><td>يأخذ</td></tr>
+            <tr><td>teach</td><td>taught</td><td>taught</td><td>يُعلّم</td></tr>
+            <tr><td>tell</td><td>told</td><td>told</td><td>يُخبر</td></tr>
+            <tr><td>think</td><td>thought</td><td>thought</td><td>يُفكر</td></tr>
+            <tr><td>understand</td><td>understood</td><td>understood</td><td>يفهم</td></tr>
+            <tr><td>win</td><td>won</td><td>won</td><td>يفوز</td></tr>
+            <tr><td>write</td><td>wrote</td><td>written</td><td>يكتب</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PHRASAL VERBS -->
+      <div class="lang-panel" id="phrasal">
+        <h3>The <em>Phrasal</em> Verbs</h3>
+        <span class="ar">الأفعال المركبة</span>
+        <p>A phrasal verb = a verb + a preposition or adverb. The new meaning is often very different from the original verb. They're extremely common in English and frequently tested.</p>
+        <span class="ar">الفعل المركب = فعل + حرف جر أو ظرف. المعنى الجديد غالبًا ما يختلف تمامًا عن الفعل الأصلي. هذه الأفعال شائعة جدًا في الإنجليزية ويتم اختبارها بكثرة.</span>
+
+        <div class="phrasal-grid">
+          <div class="phrasal-item">
+            <div class="pv">look up</div>
+            <div class="meaning">search for information</div>
+            <span class="ar-small">يبحث عن معلومة</span>
+            <div class="ex">I looked up the word in the dictionary.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">look after</div>
+            <div class="meaning">take care of</div>
+            <span class="ar-small">يعتني بـ</span>
+            <div class="ex">She looks after her little brother.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">look forward to</div>
+            <div class="meaning">wait with excitement</div>
+            <span class="ar-small">يتطلع إلى</span>
+            <div class="ex">I look forward to hearing from you.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">give up</div>
+            <div class="meaning">stop trying / quit</div>
+            <span class="ar-small">يستسلم / يتخلى عن</span>
+            <div class="ex">Never give up on your dreams.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">give back</div>
+            <div class="meaning">return something</div>
+            <span class="ar-small">يُعيد شيئًا</span>
+            <div class="ex">Please give back my book.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">get up</div>
+            <div class="meaning">rise from bed</div>
+            <span class="ar-small">يستيقظ من النوم</span>
+            <div class="ex">I get up at 6 a.m. every day.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">get along with</div>
+            <div class="meaning">have good relations with</div>
+            <span class="ar-small">يتفاهم مع</span>
+            <div class="ex">I get along with my classmates.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">get over</div>
+            <div class="meaning">recover from</div>
+            <span class="ar-small">يتجاوز / يتعافى</span>
+            <div class="ex">It took her months to get over the flu.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">put off</div>
+            <div class="meaning">postpone / delay</div>
+            <span class="ar-small">يُؤجل</span>
+            <div class="ex">Don't put off your revision.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">put on</div>
+            <div class="meaning">wear (clothes)</div>
+            <span class="ar-small">يرتدي</span>
+            <div class="ex">She put on her coat and left.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">turn on / off</div>
+            <div class="meaning">start / stop a device</div>
+            <span class="ar-small">يُشغّل / يُطفئ</span>
+            <div class="ex">Please turn off the lights.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">turn down</div>
+            <div class="meaning">reject / lower volume</div>
+            <span class="ar-small">يرفض / يخفض الصوت</span>
+            <div class="ex">He turned down the job offer.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">take off</div>
+            <div class="meaning">remove / (plane) leave ground</div>
+            <span class="ar-small">يخلع / تُقلع الطائرة</span>
+            <div class="ex">The plane takes off at noon.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">take after</div>
+            <div class="meaning">resemble (family)</div>
+            <span class="ar-small">يُشبه (عائليًا)</span>
+            <div class="ex">She takes after her mother.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">bring up</div>
+            <div class="meaning">raise (children) / mention</div>
+            <span class="ar-small">يُربّي / يطرح موضوعًا</span>
+            <div class="ex">She brought up three children alone.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">carry out</div>
+            <div class="meaning">perform / execute</div>
+            <span class="ar-small">يُنفّذ</span>
+            <div class="ex">Scientists carried out the experiment.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">come across</div>
+            <div class="meaning">find by chance</div>
+            <span class="ar-small">يصادف / يجد بالصدفة</span>
+            <div class="ex">I came across an old photo.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">find out</div>
+            <div class="meaning">discover / learn</div>
+            <span class="ar-small">يكتشف</span>
+            <div class="ex">I found out the truth yesterday.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">run out of</div>
+            <div class="meaning">have no more left</div>
+            <span class="ar-small">يَنفَد منه</span>
+            <div class="ex">We ran out of milk.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">break down</div>
+            <div class="meaning">stop working</div>
+            <span class="ar-small">يتعطل</span>
+            <div class="ex">My car broke down on the highway.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">break up</div>
+            <div class="meaning">end a relationship</div>
+            <span class="ar-small">ينفصل</span>
+            <div class="ex">They broke up last summer.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">make up</div>
+            <div class="meaning">invent / reconcile</div>
+            <span class="ar-small">يختلق / يتصالح</span>
+            <div class="ex">He made up an excuse.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">pick up</div>
+            <div class="meaning">collect / lift</div>
+            <span class="ar-small">يلتقط / يأخذ</span>
+            <div class="ex">I'll pick you up at 8.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">set up</div>
+            <div class="meaning">establish / start</div>
+            <span class="ar-small">يُنشئ / يؤسس</span>
+            <div class="ex">She set up her own company.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">show up</div>
+            <div class="meaning">appear / arrive</div>
+            <span class="ar-small">يظهر / يحضر</span>
+            <div class="ex">He didn't show up at the meeting.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">work out</div>
+            <div class="meaning">exercise / solve</div>
+            <span class="ar-small">يتمرّن / يحلّ مشكلة</span>
+            <div class="ex">She works out every morning.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">fill in / out</div>
+            <div class="meaning">complete a form</div>
+            <span class="ar-small">يملأ استمارة</span>
+            <div class="ex">Please fill in this application.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">hand in</div>
+            <div class="meaning">submit</div>
+            <span class="ar-small">يُسلّم</span>
+            <div class="ex">Hand in your essays by Friday.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">hold on</div>
+            <div class="meaning">wait</div>
+            <span class="ar-small">ينتظر</span>
+            <div class="ex">Hold on a moment, please.</div>
+          </div>
+          <div class="phrasal-item">
+            <div class="pv">grow up</div>
+            <div class="meaning">become an adult</div>
+            <span class="ar-small">يكبر / ينضج</span>
+            <div class="ex">I grew up in Casablanca.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSIVE VOICE -->
+      <div class="lang-panel" id="passive">
+        <h3>The <em>Passive</em> Voice</h3>
+        <span class="ar">المبني للمجهول</span>
+        <p>We use the passive when the action is more important than who does it, or when we don't know who did it. The object of the active sentence becomes the subject.</p>
+        <span class="ar">نستخدم المبني للمجهول عندما يكون الفعل أهم من الفاعل، أو عندما لا نعرف من قام بالفعل. مفعول الجملة المعلومة يصبح فاعل الجملة المجهولة.</span>
+
+        <div class="formula-box">
+          <span class="label">General Formula</span>
+          <div class="formula">Object + <em>be (في الزمن المناسب)</em> + V3 (past participle) + by + agent</div>
+        </div>
+
+        <table class="tense-table">
+          <thead>
+            <tr><th>Tense · الزمن</th><th>Active · معلوم</th><th>Passive · مجهول</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">Present Simple</td><td class="ex">She writes a letter.</td><td class="ex">A letter is written.</td></tr>
+            <tr><td class="name">Present Continuous</td><td class="ex">She is writing a letter.</td><td class="ex">A letter is being written.</td></tr>
+            <tr><td class="name">Past Simple</td><td class="ex">She wrote a letter.</td><td class="ex">A letter was written.</td></tr>
+            <tr><td class="name">Past Continuous</td><td class="ex">She was writing a letter.</td><td class="ex">A letter was being written.</td></tr>
+            <tr><td class="name">Present Perfect</td><td class="ex">She has written a letter.</td><td class="ex">A letter has been written.</td></tr>
+            <tr><td class="name">Past Perfect</td><td class="ex">She had written a letter.</td><td class="ex">A letter had been written.</td></tr>
+            <tr><td class="name">Future Simple</td><td class="ex">She will write a letter.</td><td class="ex">A letter will be written.</td></tr>
+            <tr><td class="name">Modal (must/can)</td><td class="ex">You must do it.</td><td class="ex">It must be done.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="rule-grid">
+          <div class="rule-card">
+            <h6>When to use "by"</h6>
+            <span class="ar-small">متى نستخدم "by"</span>
+            <div class="ex">Only when the agent (the doer) is important. Skip it if obvious or unknown.</div>
+          </div>
+          <div class="rule-card">
+            <h6>Common uses</h6>
+            <span class="ar-small">الاستخدامات الشائعة</span>
+            <div class="ex">News reports, scientific writing, formal/academic texts.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORTED SPEECH -->
+      <div class="lang-panel" id="reported">
+        <h3>The <em>Reported</em> Speech</h3>
+        <span class="ar">الكلام المنقول</span>
+        <p>When we report what someone else said, the tense usually moves "one step back" into the past. Pronouns and time expressions also change.</p>
+        <span class="ar">عندما ننقل كلام شخص آخر، يتراجع الزمن "خطوة واحدة" إلى الماضي. الضمائر وتعبيرات الزمن تتغير أيضًا.</span>
+
+        <div class="formula-box">
+          <span class="label">The Rule of "One Step Back"</span>
+          <div class="formula">Direct: She said, "I <em>am</em> happy."<br>Reported: She said (that) she <em>was</em> happy.</div>
+        </div>
+
+        <table class="tense-table">
+          <thead>
+            <tr><th>Direct · المباشر</th><th>Reported · المنقول</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="form">Present Simple (do)</td><td class="form">Past Simple (did)</td></tr>
+            <tr><td class="form">Present Continuous (am doing)</td><td class="form">Past Continuous (was doing)</td></tr>
+            <tr><td class="form">Past Simple (did)</td><td class="form">Past Perfect (had done)</td></tr>
+            <tr><td class="form">Present Perfect (have done)</td><td class="form">Past Perfect (had done)</td></tr>
+            <tr><td class="form">will</td><td class="form">would</td></tr>
+            <tr><td class="form">can</td><td class="form">could</td></tr>
+            <tr><td class="form">must / have to</td><td class="form">had to</td></tr>
+            <tr><td class="form">may</td><td class="form">might</td></tr>
+          </tbody>
+        </table>
+
+        <div class="rule-grid">
+          <div class="rule-card">
+            <h6>Time changes</h6>
+            <span class="ar-small">تغيرات الزمن</span>
+            <div class="ex">now → then · today → that day · tomorrow → the next day · yesterday → the day before · here → there · this → that</div>
+          </div>
+          <div class="rule-card">
+            <h6>Reporting questions</h6>
+            <span class="ar-small">نقل الأسئلة</span>
+            <div class="ex">Yes/No → use "if" or "whether"<br>Wh- → keep the question word<br>Word order = statement (no inversion)</div>
+          </div>
+          <div class="rule-card">
+            <h6>Reporting orders</h6>
+            <span class="ar-small">نقل الأوامر</span>
+            <div class="ex">told + sb + to + V<br>"Sit down!" → He told me to sit down.</div>
+          </div>
+          <div class="rule-card">
+            <h6>Reporting requests</h6>
+            <span class="ar-small">نقل الطلبات</span>
+            <div class="ex">asked + sb + to + V<br>"Please help me." → She asked me to help her.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONDITIONALS -->
+      <div class="lang-panel" id="conditional">
+        <h3>The <em>Conditionals</em></h3>
+        <span class="ar">الجمل الشرطية</span>
+        <p>Conditional sentences (with "if") express possibilities — from real situations to impossible dreams. There are four main types.</p>
+        <span class="ar">الجمل الشرطية (التي تبدأ بـ "if") تُعبّر عن احتمالات — من المواقف الحقيقية إلى الأحلام المستحيلة. هناك أربعة أنواع رئيسية.</span>
+
+        <div class="rule-grid">
+          <div class="rule-card">
+            <h6>Type 0 — General Truth</h6>
+            <span class="ar-small">النوع 0 — حقيقة عامة</span>
+            <div class="ex"><strong>If</strong> + present simple, present simple<br><em>If you heat water, it boils.</em></div>
+          </div>
+          <div class="rule-card">
+            <h6>Type 1 — Real Future</h6>
+            <span class="ar-small">النوع 1 — مستقبل ممكن</span>
+            <div class="ex"><strong>If</strong> + present simple, will + V<br><em>If I study, I will pass the Bac.</em></div>
+          </div>
+          <div class="rule-card">
+            <h6>Type 2 — Unreal Present</h6>
+            <span class="ar-small">النوع 2 — مضارع مستحيل / غير واقعي</span>
+            <div class="ex"><strong>If</strong> + past simple, would + V<br><em>If I were rich, I would travel the world.</em></div>
+          </div>
+          <div class="rule-card">
+            <h6>Type 3 — Unreal Past</h6>
+            <span class="ar-small">النوع 3 — ماضي مستحيل</span>
+            <div class="ex"><strong>If</strong> + past perfect, would have + V3<br><em>If I had studied, I would have passed.</em></div>
+          </div>
+        </div>
+
+        <div class="formula-box">
+          <span class="label">Important Note · ملاحظة مهمة</span>
+          <div class="formula">Never use <em>"will"</em> after <em>"if"</em>. Use the present simple instead.</div>
+        </div>
+      </div>
+
+      <!-- MODALS -->
+      <div class="lang-panel" id="modals">
+        <h3>The <em>Modal</em> Verbs</h3>
+        <span class="ar">الأفعال الناقصة (المساعدة)</span>
+        <p>Modal verbs (can, must, should…) express ability, permission, obligation, advice, possibility. They are always followed by the base form of the verb (no "to", no "-s").</p>
+        <span class="ar">الأفعال الناقصة (can, must, should…) تُعبّر عن القدرة، الإذن، الإلزام، النصيحة، والاحتمال. يتبعها دائمًا الفعل في صيغته الأصلية (بدون "to" وبدون "-s").</span>
+
+        <div class="rule-grid">
+          <div class="rule-card">
+            <h6>can / could</h6>
+            <span class="ar-small">القدرة / الإذن</span>
+            <div class="ex">Ability: I can swim.<br>Permission: Can I leave?<br>Past ability: I could read at 5.</div>
+          </div>
+          <div class="rule-card">
+            <h6>must / have to</h6>
+            <span class="ar-small">الإلزام والضرورة</span>
+            <div class="ex">Strong obligation: You must wear a seatbelt.<br>External rule: I have to wake up early.</div>
+          </div>
+          <div class="rule-card">
+            <h6>mustn't vs don't have to</h6>
+            <span class="ar-small">الفرق المهم</span>
+            <div class="ex">mustn't = prohibition (ممنوع)<br>don't have to = no obligation (غير إلزامي)</div>
+          </div>
+          <div class="rule-card">
+            <h6>should / ought to</h6>
+            <span class="ar-small">النصيحة</span>
+            <div class="ex">Advice: You should study harder.<br>You ought to apologize.</div>
+          </div>
+          <div class="rule-card">
+            <h6>may / might</h6>
+            <span class="ar-small">الاحتمال</span>
+            <div class="ex">Possibility: It may rain tomorrow.<br>It might be true.</div>
+          </div>
+          <div class="rule-card">
+            <h6>would / will</h6>
+            <span class="ar-small">الإرادة / الطلب المهذب</span>
+            <div class="ex">Polite request: Would you help me?<br>Future: I will come tomorrow.</div>
+          </div>
+          <div class="rule-card">
+            <h6>used to</h6>
+            <span class="ar-small">عادة في الماضي</span>
+            <div class="ex">Past habit (no longer true):<br>I used to play football every day.</div>
+          </div>
+          <div class="rule-card">
+            <h6>had better</h6>
+            <span class="ar-small">نصيحة قوية</span>
+            <div class="ex">Strong advice / warning:<br>You'd better hurry — we're late.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATIVE CLAUSES -->
+      <div class="lang-panel" id="relative">
+        <h3>The <em>Relative</em> Clauses</h3>
+        <span class="ar">الجمل الموصولة</span>
+        <p>Relative clauses give more information about a noun. They start with a relative pronoun: who, which, that, whose, where, when.</p>
+        <span class="ar">الجمل الموصولة تُعطي معلومات إضافية عن اسم معين. تبدأ بضمير موصول: who, which, that, whose, where, when.</span>
+
+        <div class="rule-grid">
+          <div class="rule-card">
+            <h6>who · لـ الأشخاص</h6>
+            <span class="ar-small">للأشخاص (فاعل)</span>
+            <div class="ex">The teacher <strong>who</strong> teaches us English is kind.</div>
+          </div>
+          <div class="rule-card">
+            <h6>which · للأشياء والحيوانات</h6>
+            <span class="ar-small">للأشياء والحيوانات</span>
+            <div class="ex">The book <strong>which</strong> I read was excellent.</div>
+          </div>
+          <div class="rule-card">
+            <h6>that · للجميع</h6>
+            <span class="ar-small">للأشخاص والأشياء</span>
+            <div class="ex">This is the house <strong>that</strong> Jack built.</div>
+          </div>
+          <div class="rule-card">
+            <h6>whose · للملكية</h6>
+            <span class="ar-small">للدلالة على الملكية</span>
+            <div class="ex">The student <strong>whose</strong> bag was lost is here.</div>
+          </div>
+          <div class="rule-card">
+            <h6>where · للأماكن</h6>
+            <span class="ar-small">للأماكن</span>
+            <div class="ex">This is the school <strong>where</strong> I studied.</div>
+          </div>
+          <div class="rule-card">
+            <h6>when · للزمان</h6>
+            <span class="ar-small">للزمان</span>
+            <div class="ex">2026 is the year <strong>when</strong> I'll graduate.</div>
+          </div>
+        </div>
+
+        <div class="formula-box">
+          <span class="label">Defining vs Non-Defining · أساسية أم إضافية</span>
+          <div class="formula">Defining (no commas): The man <em>who</em> called you is here.<br>Non-defining (with commas): My father, <em>who</em> is 50, loves football.</div>
+        </div>
+      </div>
+
+      <!-- LINKERS -->
+      <div class="lang-panel" id="linkers">
+        <h3>The <em>Linkers</em> (Connectors)</h3>
+        <span class="ar">أدوات الربط</span>
+        <p>Linkers connect ideas in a sentence or between sentences. They make your writing flow smoothly and score higher in the exam.</p>
+        <span class="ar">أدوات الربط تربط الأفكار داخل الجملة أو بين الجمل. تجعل كتابتك تتدفق بسلاسة وتحصل على نقاط أعلى في الامتحان.</span>
+
+        <div class="linker-cats">
+          <div class="linker-cat">
+            <h6>Addition</h6>
+            <span class="ar-small">للإضافة</span>
+            <ul>
+              <li>and</li>
+              <li>also</li>
+              <li>moreover</li>
+              <li>furthermore</li>
+              <li>in addition</li>
+              <li>besides</li>
+            </ul>
+          </div>
+          <div class="linker-cat">
+            <h6>Contrast</h6>
+            <span class="ar-small">للتعارض</span>
+            <ul>
+              <li>but</li>
+              <li>however</li>
+              <li>although / though</li>
+              <li>nevertheless</li>
+              <li>on the other hand</li>
+              <li>in contrast</li>
+            </ul>
+          </div>
+          <div class="linker-cat">
+            <h6>Cause / Reason</h6>
+            <span class="ar-small">للسبب</span>
+            <ul>
+              <li>because</li>
+              <li>since</li>
+              <li>as</li>
+              <li>due to</li>
+              <li>owing to</li>
+              <li>because of</li>
+            </ul>
+          </div>
+          <div class="linker-cat">
+            <h6>Effect / Result</h6>
+            <span class="ar-small">للنتيجة</span>
+            <ul>
+              <li>so</li>
+              <li>therefore</li>
+              <li>thus</li>
+              <li>consequently</li>
+              <li>as a result</li>
+              <li>that's why</li>
+            </ul>
+          </div>
+          <div class="linker-cat">
+            <h6>Examples</h6>
+            <span class="ar-small">للأمثلة</span>
+            <ul>
+              <li>for example</li>
+              <li>for instance</li>
+              <li>such as</li>
+              <li>namely</li>
+              <li>that is</li>
+            </ul>
+          </div>
+          <div class="linker-cat">
+            <h6>Sequence / Time</h6>
+            <span class="ar-small">للترتيب</span>
+            <ul>
+              <li>first / firstly</li>
+              <li>then / next</li>
+              <li>afterwards</li>
+              <li>meanwhile</li>
+              <li>finally</li>
+              <li>at last</li>
+            </ul>
+          </div>
+          <div class="linker-cat">
+            <h6>Conclusion</h6>
+            <span class="ar-small">للخاتمة</span>
+            <ul>
+              <li>in conclusion</li>
+              <li>to conclude</li>
+              <li>to sum up</li>
+              <li>in short</li>
+              <li>all in all</li>
+              <li>overall</li>
+            </ul>
+          </div>
+          <div class="linker-cat">
+            <h6>Purpose</h6>
+            <span class="ar-small">للغرض</span>
+            <ul>
+              <li>to / in order to</li>
+              <li>so as to</li>
+              <li>so that</li>
+              <li>in order that</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <div class="section-num">§ III</div>
+  <div class="section-header reveal">
+    <div class="section-tag">The Writing Atelier · ورشة الكتابة</div>
+    <h2>How to write a <em>winning</em> composition.</h2>
+    <p>Six writing types you'll meet in the National Exam — each with structure, useful phrases, and a model paragraph. Click on a type to begin.</p>
+    <span class="ar">ستة أنواع من الكتابة ستواجهها في الامتحان الوطني — كل نوع مع هيكله، عباراته المفيدة، ونموذج تطبيقي. اضغط على أي نوع للبدء.</span>
+  </div>
+
+  <div class="writing-layout">
+    <aside class="writing-sidebar">
+      <h4>Writing Types</h4>
+      <span class="ar">أنواع الكتابة</span>
+      <ul class="writing-nav">
+        <li class="active" data-tab="opinion"><div>Opinion Essay<span class="ar-inline">مقال الرأي</span></div></li>
+        <li data-tab="letter"><div>Formal Letter<span class="ar-inline">رسالة رسمية</span></div></li>
+        <li data-tab="email"><div>Email<span class="ar-inline">البريد الإلكتروني</span></div></li>
+        <li data-tab="article"><div>Article<span class="ar-inline">مقال صحفي</span></div></li>
+        <li data-tab="narrative"><div>Narrative<span class="ar-inline">قصة سردية</span></div></li>
+        <li data-tab="forfor"><div>For & Against<span class="ar-inline">مع وضد</span></div></li>
+      </ul>
+    </aside>
+
+    <div class="writing-content">
+
+      <!-- OPINION ESSAY -->
+      <div class="writing-panel active" id="opinion">
+        <h3>The <em>Opinion</em> Essay</h3>
+        <span class="ar">مقال الرأي</span>
+        <p>An opinion essay (sometimes called a "persuasive essay") asks you to take a clear position on a topic and defend it with reasons and examples. Length: usually 150–200 words.</p>
+        <span class="ar">مقال الرأي (أو المقال الإقناعي) يطلب منك أن تتخذ موقفًا واضحًا حول موضوع معين وتدافع عنه بالأسباب والأمثلة. الطول: عادةً بين 150 و 200 كلمة.</span>
+
+        <div class="structure-box">
+          <h5>Structure (4 paragraphs)</h5>
+          <span class="ar">الهيكل (4 فقرات)</span>
+          <ol>
+            <li><strong>Introduction:</strong> Present the topic and clearly state your opinion.
+              <span class="ar-small">المقدمة: قدّم الموضوع واذكر رأيك بوضوح.</span></li>
+            <li><strong>Body Paragraph 1:</strong> First reason + an example or evidence.
+              <span class="ar-small">الفقرة الأولى: السبب الأول + مثال أو دليل يدعمه.</span></li>
+            <li><strong>Body Paragraph 2:</strong> Second reason + another example.
+              <span class="ar-small">الفقرة الثانية: السبب الثاني + مثال آخر.</span></li>
+            <li><strong>Conclusion:</strong> Restate your opinion in different words and add a final thought.
+              <span class="ar-small">الخاتمة: أعد صياغة رأيك بكلمات مختلفة وأضف فكرة ختامية.</span></li>
+          </ol>
+        </div>
+
+        <h4 style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;margin:32px 0 4px;">Useful Phrases</h4>
+        <span class="ar" style="margin-bottom:20px">عبارات مفيدة</span>
+        <div class="phrases-grid">
+          <div class="phrase-card">
+            <h6>Stating Opinion</h6>
+            <span class="ar-small">للتعبير عن الرأي</span>
+            <ul>
+              <li>In my opinion, …</li>
+              <li>I strongly believe that …</li>
+              <li>From my point of view, …</li>
+              <li>It seems to me that …</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Adding Arguments</h6>
+            <span class="ar-small">لإضافة الحجج</span>
+            <ul>
+              <li>Firstly, … / Secondly, …</li>
+              <li>Moreover, … / Furthermore, …</li>
+              <li>In addition, …</li>
+              <li>Another reason is …</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Giving Examples</h6>
+            <span class="ar-small">لإعطاء أمثلة</span>
+            <ul>
+              <li>For instance, …</li>
+              <li>For example, …</li>
+              <li>Such as …</li>
+              <li>A good case in point is …</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Concluding</h6>
+            <span class="ar-small">للخاتمة</span>
+            <ul>
+              <li>To conclude, …</li>
+              <li>All in all, …</li>
+              <li>In short, …</li>
+              <li>For these reasons, I believe …</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="example-block">
+          <p><strong>Topic:</strong> Some people believe that technology has made us less social. Do you agree?</p>
+          <p>In today's digital age, the way we communicate has changed dramatically. In my opinion, while technology has many benefits, it has indeed made us less social in real life.</p>
+          <p>Firstly, smartphones and social media often replace face-to-face conversations. For example, families now spend evenings looking at screens instead of talking together. Moreover, online relationships frequently lack the depth and warmth of real friendships.</p>
+          <p>To conclude, although technology connects us globally, it can isolate us locally. We should use it wisely to support — not replace — real human contact.</p>
+        </div>
+      </div>
+
+      <!-- FORMAL LETTER -->
+      <div class="writing-panel" id="letter">
+        <h3>The <em>Formal</em> Letter</h3>
+        <span class="ar">الرسالة الرسمية</span>
+        <p>Used when writing to someone you don't know personally — a principal, a manager, an editor, a government official. The tone must remain respectful and impersonal.</p>
+        <span class="ar">تُستخدم عند الكتابة لشخص لا تعرفه شخصيًا — مدير مدرسة، مسؤول، محرر، أو موظف حكومي. يجب أن تكون النبرة محترمة ورسمية دون طابع شخصي.</span>
+
+        <div class="structure-box">
+          <h5>Layout</h5>
+          <span class="ar">التخطيط</span>
+          <ol>
+            <li><strong>Your address</strong> (top right corner)
+              <span class="ar-small">عنوانك (في الزاوية اليمنى العليا)</span></li>
+            <li><strong>Date</strong> (below your address)
+              <span class="ar-small">التاريخ (تحت عنوانك)</span></li>
+            <li><strong>Recipient's address</strong> (left side)
+              <span class="ar-small">عنوان المُرسَل إليه (على الجانب الأيسر)</span></li>
+            <li><strong>Salutation:</strong> "Dear Sir/Madam," or "Dear Mr./Ms. [Surname],"
+              <span class="ar-small">التحية: "سيدي/سيدتي" أو "السيد/السيدة [اللقب]"</span></li>
+            <li><strong>Opening paragraph:</strong> State your reason for writing
+              <span class="ar-small">الفقرة الافتتاحية: اذكر سبب كتابتك</span></li>
+            <li><strong>Body paragraphs:</strong> Develop your message clearly
+              <span class="ar-small">فقرات الجسم: طوّر رسالتك بوضوح</span></li>
+            <li><strong>Closing paragraph:</strong> Express what you expect next
+              <span class="ar-small">الفقرة الختامية: اذكر ما تنتظره من الجواب</span></li>
+            <li><strong>Sign-off:</strong> "Yours faithfully," (if Sir/Madam) or "Yours sincerely," (if name)
+              <span class="ar-small">صيغة الختام: "Yours faithfully" (إذا لم تعرف الاسم) أو "Yours sincerely" (إذا عرفته)</span></li>
+            <li><strong>Your full name</strong>
+              <span class="ar-small">اسمك الكامل</span></li>
+          </ol>
+        </div>
+
+        <div class="phrases-grid">
+          <div class="phrase-card">
+            <h6>Opening</h6>
+            <span class="ar-small">الافتتاح</span>
+            <ul>
+              <li>I am writing to inquire about …</li>
+              <li>I am writing in reference to …</li>
+              <li>I would like to apply for …</li>
+              <li>I am writing to complain about …</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Requesting</h6>
+            <span class="ar-small">للطلب</span>
+            <ul>
+              <li>I would be grateful if you could …</li>
+              <li>Could you please send me …?</li>
+              <li>I would appreciate it if …</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Closing</h6>
+            <span class="ar-small">للختام</span>
+            <ul>
+              <li>I look forward to hearing from you.</li>
+              <li>Thank you for your time and consideration.</li>
+              <li>I await your prompt reply.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="example-block">
+          <p>Dear Sir/Madam,</p>
+          <p>I am writing to apply for the summer volunteer programme advertised on your website. I am a second-year Baccalauréat student with a strong interest in community work and environmental protection.</p>
+          <p>I would be grateful if you could send me more information about the application process and the required documents.</p>
+          <p>I look forward to hearing from you.</p>
+          <p>Yours faithfully,<br>[Your Full Name]</p>
+        </div>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="writing-panel" id="email">
+        <h3>The <em>Email</em></h3>
+        <span class="ar">البريد الإلكتروني</span>
+        <p>Emails can be formal or semi-formal. In the National Exam, you'll usually write a friendly email to a pen friend or a polite one to a teacher. Keep it clear and well-organized.</p>
+        <span class="ar">البريد الإلكتروني يمكن أن يكون رسميًا أو شبه رسمي. في الامتحان الوطني، عادةً ستكتب بريدًا وديًا لصديق مراسلة أو بريدًا مهذبًا لأستاذ. اجعله واضحًا ومنظمًا.</span>
+
+        <div class="structure-box">
+          <h5>Structure</h5>
+          <span class="ar">الهيكل</span>
+          <ol>
+            <li><strong>Subject line:</strong> Short and informative
+              <span class="ar-small">العنوان: قصير ومُعبّر</span></li>
+            <li><strong>Greeting:</strong> "Hi Sarah," (informal) / "Dear Mr. Brown," (formal)
+              <span class="ar-small">التحية: "Hi Sarah" (غير رسمي) / "Dear Mr. Brown" (رسمي)</span></li>
+            <li><strong>Opening line:</strong> A friendly opener or reason for writing
+              <span class="ar-small">الجملة الافتتاحية: تحية ودية أو سبب الكتابة</span></li>
+            <li><strong>Main message:</strong> 1–2 short paragraphs
+              <span class="ar-small">الرسالة الرئيسية: فقرة أو فقرتان قصيرتان</span></li>
+            <li><strong>Closing line:</strong> A friendly send-off
+              <span class="ar-small">الجملة الختامية: توديع ودي</span></li>
+            <li><strong>Sign-off:</strong> "Best wishes," / "Kind regards," / "Take care,"
+              <span class="ar-small">التوقيع: "مع أطيب التمنيات" / "تحياتي" / "اعتنِ بنفسك"</span></li>
+          </ol>
+        </div>
+
+        <div class="example-block">
+          <p><strong>Subject:</strong> News from Morocco!</p>
+          <p>Hi Emma,</p>
+          <p>How are you? I hope you're doing well. Sorry I haven't written for a while — I've been very busy preparing for my Bac exams.</p>
+          <p>I have great news! Our school is organising a cultural exchange next spring, and I would love it if you could visit Morocco. Let me know what you think.</p>
+          <p>Write back soon!</p>
+          <p>Take care,<br>Yassine</p>
+        </div>
+      </div>
+
+      <!-- ARTICLE -->
+      <div class="writing-panel" id="article">
+        <h3>The <em>Article</em></h3>
+        <span class="ar">المقال الصحفي</span>
+        <p>An article is written for a magazine, newspaper, or website. It should engage the reader from the first line with a catchy title and a hook. Tone: lively and informative.</p>
+        <span class="ar">المقال يُكتب لمجلة، جريدة، أو موقع إلكتروني. يجب أن يجذب القارئ من السطر الأول بعنوان لافت وجملة افتتاحية مشوّقة. النبرة: حيوية ومعلوماتية.</span>
+
+        <div class="structure-box">
+          <h5>Structure</h5>
+          <span class="ar">الهيكل</span>
+          <ol>
+            <li><strong>Title:</strong> Catchy, sometimes a question or a play on words
+              <span class="ar-small">العنوان: جذاب، أحيانًا على شكل سؤال أو تلاعب بالكلمات</span></li>
+            <li><strong>Introduction:</strong> Hook the reader — a surprising fact, a question, or a quote
+              <span class="ar-small">المقدمة: اجذب القارئ بمعلومة مفاجئة، سؤال، أو اقتباس</span></li>
+            <li><strong>Body:</strong> 2–3 paragraphs developing the topic with examples and details
+              <span class="ar-small">الجسم: فقرتان أو ثلاث تطوّر الموضوع بالأمثلة والتفاصيل</span></li>
+            <li><strong>Conclusion:</strong> A memorable closing — call to action, prediction, or reflection
+              <span class="ar-small">الخاتمة: نهاية لا تُنسى — دعوة للعمل، توقع، أو تأمل</span></li>
+          </ol>
+        </div>
+
+        <div class="phrases-grid">
+          <div class="phrase-card">
+            <h6>Hooks</h6>
+            <span class="ar-small">جمل افتتاحية مشوقة</span>
+            <ul>
+              <li>Did you know that …?</li>
+              <li>Imagine a world where …</li>
+              <li>Have you ever wondered …?</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Engaging the Reader</h6>
+            <span class="ar-small">لإشراك القارئ</span>
+            <ul>
+              <li>You might be surprised to learn …</li>
+              <li>Let's take a closer look at …</li>
+              <li>What does this mean for us?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- NARRATIVE -->
+      <div class="writing-panel" id="narrative">
+        <h3>The <em>Narrative</em> (Story)</h3>
+        <span class="ar">القصة السردية</span>
+        <p>A narrative tells a story — real or imagined. Use past tenses, vivid descriptions, and dialogue to bring it to life. Always have a clear beginning, middle, and end.</p>
+        <span class="ar">السرد يحكي قصة — حقيقية أو خيالية. استخدم الأزمنة الماضية، أوصافًا حية، وحوارًا لإضفاء الحياة عليها. يجب أن تكون لها بداية ووسط ونهاية واضحة.</span>
+
+        <div class="structure-box">
+          <h5>The Five Parts of a Story</h5>
+          <span class="ar">العناصر الخمسة للقصة</span>
+          <ol>
+            <li><strong>Setting:</strong> When and where it happened
+              <span class="ar-small">المكان والزمان: متى وأين حدثت القصة</span></li>
+            <li><strong>Characters:</strong> Who was involved — describe briefly
+              <span class="ar-small">الشخصيات: من شارك — صفهم بإيجاز</span></li>
+            <li><strong>Problem / Event:</strong> Something happens that changes the situation
+              <span class="ar-small">المشكلة أو الحدث: شيء يحدث ويغيّر الوضع</span></li>
+            <li><strong>Climax:</strong> The most exciting or tense moment
+              <span class="ar-small">الذروة: اللحظة الأكثر إثارة أو توترًا</span></li>
+            <li><strong>Resolution:</strong> How it ended + a lesson or feeling
+              <span class="ar-small">الحل: كيف انتهت + درس أو شعور مستفاد</span></li>
+          </ol>
+        </div>
+
+        <div class="phrases-grid">
+          <div class="phrase-card">
+            <h6>Sequencing</h6>
+            <span class="ar-small">للترتيب الزمني</span>
+            <ul>
+              <li>It all began when …</li>
+              <li>Suddenly, …</li>
+              <li>A few moments later, …</li>
+              <li>In the end, …</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Describing Feelings</h6>
+            <span class="ar-small">لوصف المشاعر</span>
+            <ul>
+              <li>I was thrilled / terrified / amazed …</li>
+              <li>My heart was pounding.</li>
+              <li>I couldn't believe my eyes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOR & AGAINST -->
+      <div class="writing-panel" id="forfor">
+        <h3>The <em>For & Against</em> Essay</h3>
+        <span class="ar">مقال "مع وضد"</span>
+        <p>Also called a "discussion essay" — you present both sides of an argument fairly, then (optionally) give your own opinion at the end.</p>
+        <span class="ar">يُسمى أيضًا "مقال النقاش" — تعرض كلا جانبي القضية بإنصاف، ثم (اختياريًا) تعطي رأيك الخاص في النهاية.</span>
+
+        <div class="structure-box">
+          <h5>Structure (4 paragraphs)</h5>
+          <span class="ar">الهيكل (4 فقرات)</span>
+          <ol>
+            <li><strong>Introduction:</strong> Present the topic and state that there are arguments on both sides
+              <span class="ar-small">المقدمة: قدّم الموضوع واذكر أن هناك حججًا من الجهتين</span></li>
+            <li><strong>Body 1 — Advantages:</strong> 2–3 points in favour, with examples
+              <span class="ar-small">الفقرة 1 — الإيجابيات: نقطتان أو ثلاث مؤيدة، مع أمثلة</span></li>
+            <li><strong>Body 2 — Disadvantages:</strong> 2–3 points against, with examples
+              <span class="ar-small">الفقرة 2 — السلبيات: نقطتان أو ثلاث معارضة، مع أمثلة</span></li>
+            <li><strong>Conclusion:</strong> Weigh both sides — give a balanced verdict or your opinion
+              <span class="ar-small">الخاتمة: وازن بين الجانبين — أعطِ حكمًا متوازنًا أو رأيك</span></li>
+          </ol>
+        </div>
+
+        <div class="phrases-grid">
+          <div class="phrase-card">
+            <h6>Presenting Pros</h6>
+            <span class="ar-small">لعرض الإيجابيات</span>
+            <ul>
+              <li>One major advantage is …</li>
+              <li>On the one hand, …</li>
+              <li>Supporters argue that …</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Presenting Cons</h6>
+            <span class="ar-small">لعرض السلبيات</span>
+            <ul>
+              <li>On the other hand, …</li>
+              <li>However, … / Nevertheless, …</li>
+              <li>Critics claim that …</li>
+            </ul>
+          </div>
+          <div class="phrase-card">
+            <h6>Concluding</h6>
+            <span class="ar-small">للخاتمة</span>
+            <ul>
+              <li>Taking everything into account, …</li>
+              <li>On balance, I believe …</li>
+              <li>Although both sides have valid points, …</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section id="tips">
+  <div class="section-num">§ IV</div>
+  <div class="section-header reveal">
+    <div class="section-tag">Study Smarter · ادرس بذكاء</div>
+    <h2>Eight habits that <em>actually</em> improve your English.</h2>
+    <p>Tested study strategies for the months leading up to your National Exam.</p>
+    <span class="ar">ثماني عادات مُجرّبة لتحسين مستواك في اللغة الإنجليزية خلال الأشهر التي تسبق الامتحان الوطني.</span>
+  </div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-num">01</div>
+      <h4>Read every day</h4>
+      <span class="ar">اقرأ كل يوم</span>
+      <p>Even 10 minutes of English news, short stories, or articles trains your eye for grammar and vocabulary in context.</p>
+      <span class="ar">حتى 10 دقائق من الأخبار أو القصص القصيرة بالإنجليزية تدرّب عينك على القواعد والمفردات في سياقها الطبيعي.</span>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">02</div>
+      <h4>Keep a vocab journal</h4>
+      <span class="ar">احتفظ بدفتر للمفردات</span>
+      <p>Write down new words with a full sentence, not just a translation. Review them weekly.</p>
+      <span class="ar">اكتب الكلمات الجديدة مع جملة كاملة، وليس فقط الترجمة. راجعها أسبوعيًا.</span>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">03</div>
+      <h4>Watch with subtitles</h4>
+      <span class="ar">شاهد مع الترجمة</span>
+      <p>Start with English subtitles on English content. Switch them off when ready.</p>
+      <span class="ar">ابدأ بترجمة إنجليزية على محتوى إنجليزي. أغلقها عندما تشعر أنك جاهز.</span>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">04</div>
+      <h4>Write weekly</h4>
+      <span class="ar">اكتب أسبوعيًا</span>
+      <p>One full composition per week. Re-read it the next day with fresh eyes and improve it.</p>
+      <span class="ar">إنشاء كامل كل أسبوع. أعد قراءته في اليوم التالي بعين جديدة وحسّنه.</span>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">05</div>
+      <h4>Speak out loud</h4>
+      <span class="ar">تكلم بصوت عالٍ</span>
+      <p>Read your essays aloud — you'll catch awkward phrasing your eye misses.</p>
+      <span class="ar">اقرأ كتاباتك بصوت عالٍ — ستلتقط الصياغات الغريبة التي تفوّتها عينك.</span>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">06</div>
+      <h4>Master linkers</h4>
+      <span class="ar">أتقن أدوات الربط</span>
+      <p>However, moreover, nevertheless, consequently — these words instantly raise your writing quality.</p>
+      <span class="ar">However, moreover, nevertheless, consequently — هذه الكلمات ترفع جودة كتابتك فورًا.</span>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">07</div>
+      <h4>Past papers, always</h4>
+      <span class="ar">الامتحانات السابقة، دائمًا</span>
+      <p>Work through previous National Exams under timed conditions. It's the closest practice to the real thing.</p>
+      <span class="ar">اشتغل على امتحانات وطنية سابقة في ظروف زمنية محددة. هذا أقرب تدريب للواقع.</span>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">08</div>
+      <h4>Sleep before you revise</h4>
+      <span class="ar">النوم قبل المراجعة</span>
+      <p>A rested brain learns faster than a stressed one. Don't sacrifice sleep the night before the exam.</p>
+      <span class="ar">العقل المرتاح يتعلم أسرع من العقل المُجهد. لا تضحِّ بنومك ليلة الامتحان.</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTS -->
+<section id="tests">
+  <div class="section-num">§ V</div>
+  <div class="section-header reveal">
+    <div class="section-tag">Self-Assessment · اختبر مستواك</div>
+    <h2>Test your <em>English</em> level.</h2>
+    <p>Six interactive quizzes covering everything in your 2 Bac program. Get instant feedback, see your score, and discover your level — from A2 to C1.</p>
+    <span class="ar">ستة اختبارات تفاعلية تغطي كل ما في برنامج السنة الثانية باكالوريا. احصل على ملاحظات فورية، شاهد نتيجتك، واكتشف مستواك — من A2 إلى C1.</span>
+  </div>
+
+  <!-- Test Hub: choose a test -->
+  <div id="testHub" class="test-hub">
+    <div class="test-card" data-test="grammar">
+      <div class="test-icon"><span class="num">01</span><span class="pts">/ 12 Q</span></div>
+      <h3>Grammar Mastery</h3>
+      <span class="ar-inline">إتقان القواعد</span>
+      <p>Tenses, conditionals, modals, passive voice, reported speech.</p>
+      <span class="ar">الأزمنة، الشرط، الأفعال الناقصة، المبني للمجهول، الكلام المنقول.</span>
+      <div class="test-meta">
+        <span>Intermediate · متوسط</span>
+        <span class="start-cta">Start <span>→</span></span>
+      </div>
+    </div>
+
+    <div class="test-card" data-test="vocab">
+      <div class="test-icon"><span class="num">02</span><span class="pts">/ 10 Q</span></div>
+      <h3>Vocabulary Test</h3>
+      <span class="ar-inline">اختبار المفردات</span>
+      <p>Synonyms, antonyms, and common words from the 2 Bac syllabus.</p>
+      <span class="ar">المرادفات، الأضداد، والكلمات الشائعة في برنامج الباكالوريا.</span>
+      <div class="test-meta">
+        <span>Easy → Intermediate</span>
+        <span class="start-cta">Start <span>→</span></span>
+      </div>
+    </div>
+
+    <div class="test-card" data-test="phrasal">
+      <div class="test-icon"><span class="num">03</span><span class="pts">/ 10 Q</span></div>
+      <h3>Phrasal Verbs</h3>
+      <span class="ar-inline">الأفعال المركبة</span>
+      <p>Choose the right phrasal verb to complete each sentence.</p>
+      <span class="ar">اختر الفعل المركب الصحيح لإكمال كل جملة.</span>
+      <div class="test-meta">
+        <span>Intermediate</span>
+        <span class="start-cta">Start <span>→</span></span>
+      </div>
+    </div>
+
+    <div class="test-card" data-test="irregular">
+      <div class="test-icon"><span class="num">04</span><span class="pts">/ 10 Q</span></div>
+      <h3>Irregular Verbs</h3>
+      <span class="ar-inline">الأفعال الشاذة</span>
+      <p>Recognize the past simple (V2) and past participle (V3) forms.</p>
+      <span class="ar">تعرّف على صيغ الماضي البسيط (V2) واسم المفعول (V3).</span>
+      <div class="test-meta">
+        <span>Easy</span>
+        <span class="start-cta">Start <span>→</span></span>
+      </div>
+    </div>
+
+    <div class="test-card" data-test="reading">
+      <div class="test-icon"><span class="num">05</span><span class="pts">/ 5 Q</span></div>
+      <h3>Reading Comprehension</h3>
+      <span class="ar-inline">فهم النص</span>
+      <p>Read a short text and answer questions about it — like the National Exam.</p>
+      <span class="ar">اقرأ نصًا قصيرًا وأجب عن أسئلته — مثل الامتحان الوطني.</span>
+      <div class="test-meta">
+        <span>Intermediate</span>
+        <span class="start-cta">Start <span>→</span></span>
+      </div>
+    </div>
+
+    <div class="test-card" data-test="mixed">
+      <div class="test-icon"><span class="num">06</span><span class="pts">/ 15 Q</span></div>
+      <h3>Level Placement Test</h3>
+      <span class="ar-inline">اختبار تحديد المستوى</span>
+      <p>A mix of all topics. Take it to know your overall English level.</p>
+      <span class="ar">مزيج من جميع المواضيع. خذه لتعرف مستواك العام في الإنجليزية.</span>
+      <div class="test-meta">
+        <span>All levels · كل المستويات</span>
+        <span class="start-cta">Start <span>→</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz interface (hidden by default) -->
+  <div id="testQuiz" class="quiz-container" hidden>
+    <div class="quiz-header">
+      <div class="quiz-title" id="quizTitle"></div>
+      <button class="quiz-exit" onclick="exitTest()">✕ Exit · خروج</button>
+    </div>
+    <div class="quiz-progress">
+      <div class="quiz-progress-text">
+        <span id="quizProgressLabel">Question 1 of 12</span>
+        <span class="score">Score: <span id="quizScore">0</span></span>
+      </div>
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+    </div>
+    <div id="readingTextWrap"></div>
+    <div class="question-wrap" id="questionWrap"></div>
+  </div>
+
+  <!-- Results screen (hidden by default) -->
+  <div id="testResults" class="results-container" hidden>
+    <div class="score-circle">
+      <svg viewBox="0 0 200 200">
+        <circle class="track" cx="100" cy="100" r="90"></circle>
+        <circle class="fill" id="scoreCircle" cx="100" cy="100" r="90"></circle>
+      </svg>
+      <div class="score-text"><span id="finalScore">0</span><span class="pct">%</span></div>
+    </div>
+    <div class="level-badge" id="levelBadge">— · —</div>
+    <h3 class="results-message" id="resultsMessage">Well done!</h3>
+    <span class="ar" id="resultsMessageAr">أحسنت!</span>
+    <div class="results-stats">
+      <div class="stat-item"><div class="v" id="correctCount">0</div><div class="l">Correct · صحيح</div></div>
+      <div class="stat-item"><div class="v" id="wrongCount">0</div><div class="l">Wrong · خاطئ</div></div>
+      <div class="stat-item"><div class="v" id="totalCount">0</div><div class="l">Total · المجموع</div></div>
+    </div>
+    <div class="results-actions">
+      <button class="btn btn-primary" onclick="restartTest()">Retake Test · إعادة المحاولة</button>
+      <button class="btn btn-secondary" onclick="exitTest()">Try Another · اختبار آخر</button>
+    </div>
+  </div>
+</section>
+
+<!-- EXAM -->
+<section id="exam">
+  <div class="section-num">§ VI</div>
+  <div class="exam-layout">
+    <div class="exam-visual">
+      <div class="exam-paper">
+        <div class="header">NATIONAL EXAM · ENGLISH<br>2 BAC — DURATION: 2H</div>
+        <div class="section-line"><span>I. Reading Comprehension</span><span>/15 pts</span></div>
+        <div class="section-line"><span>II. Language</span><span>/15 pts</span></div>
+        <div class="section-line"><span>III. Writing Production</span><span>/10 pts</span></div>
+        <div class="grade">TOTAL — /40 pts</div>
+      </div>
+    </div>
+    <div class="exam-details">
+      <div class="section-tag">Exam Breakdown · مكونات الامتحان</div>
+      <h2>What to <em style="color:var(--burgundy);font-style:italic">expect</em> on exam day.</h2>
+      <span class="ar">ما الذي ستجده يوم الامتحان</span>
+      <p>The National Exam is divided into three sections. Knowing exactly what you'll face helps you manage your time and your nerves.</p>
+      <span class="ar">الامتحان الوطني مقسم إلى ثلاثة أقسام. معرفة ما ستواجهه بالضبط يساعدك على إدارة وقتك وأعصابك.</span>
+      <div class="exam-breakdown">
+        <div class="breakdown-item">
+          <div class="label-wrap">
+            <span class="label">Reading Comprehension</span>
+            <span class="ar-inline">فهم النص</span>
+          </div>
+          <span class="value">40 minutes</span>
+        </div>
+        <div class="breakdown-item">
+          <div class="label-wrap">
+            <span class="label">Language Use (Grammar + Vocab)</span>
+            <span class="ar-inline">استعمال اللغة (قواعد + مفردات)</span>
+          </div>
+          <span class="value">40 minutes</span>
+        </div>
+        <div class="breakdown-item">
+          <div class="label-wrap">
+            <span class="label">Writing Production</span>
+            <span class="ar-inline">الإنتاج الكتابي</span>
+          </div>
+          <span class="value">40 minutes</span>
+        </div>
+        <div class="breakdown-item">
+          <div class="label-wrap">
+            <span class="label">Recommended word count</span>
+            <span class="ar-inline">عدد الكلمات الموصى به</span>
+          </div>
+          <span class="value">150–200 words</span>
+        </div>
+      </div>
+      <a href="#writing" class="btn btn-primary" style="margin-top:20px;">Practice Writing Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>English Atelier</h3>
+      <p>A digital companion for second-year Baccalauréat students preparing for the National English Exam. Built with care, for curious minds.</p>
+      <span class="ar">رفيق رقمي لطلاب السنة الثانية باكالوريا للاستعداد لامتحان اللغة الإنجليزية الوطني. صُمم بعناية للعقول الفضولية.</span>
+    </div>
+    <div>
+      <h5>Sections · الأقسام</h5>
+      <ul>
+        <li><a href="#home" style="color:inherit;text-decoration:none">Home · الرئيسية</a></li>
+        <li><a href="#courses" style="color:inherit;text-decoration:none">Courses · الدروس</a></li>
+        <li><a href="#writing" style="color:inherit;text-decoration:none">Writing · الكتابة</a></li>
+        <li><a href="#tips" style="color:inherit;text-decoration:none">Tips · النصائح</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Writing · الكتابة</h5>
+      <ul>
+        <li>Opinion Essays · مقال الرأي</li>
+        <li>Formal Letters · رسائل رسمية</li>
+        <li>Articles · مقالات</li>
+        <li>Narratives · قصص</li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources · موارد</h5>
+      <ul>
+        <li>Past Exams · امتحانات سابقة</li>
+        <li>Vocabulary Lists · قوائم مفردات</li>
+        <li>Grammar Reference · مرجع القواعد</li>
+        <li>Practice Tests · اختبارات تطبيقية</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 English Atelier — Made for 2 Bac Students · صُمم لطلاب السنة الثانية باكالوريا</div>
+    <div>Crafted with attention to learning.</div>
+  </div>
+</footer>
+
+<script>
+  // Writing tab switcher
+  const tabs = document.querySelectorAll('.writing-nav li');
+  const panels = document.querySelectorAll('.writing-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  // ═══════════════════════════════════════════════════════════
+  // THEME TOGGLE (Dark / Light Mode)
+  // ═══════════════════════════════════════════════════════════
+  (function initTheme() {
+    const themeBtn = document.getElementById('themeBtn');
+    let savedTheme = 'light';
+    try {
+      savedTheme = localStorage.getItem('atelier-theme') || 'light';
+    } catch (e) { /* localStorage may be blocked */ }
+
+    // Also check system preference if no saved theme
+    if (!localStorage.getItem('atelier-theme') && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      savedTheme = 'dark';
+    }
+
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('atelier-theme', next);
+      } catch (e) {}
+    });
+  })();
+
+  // Language tab switcher
+  const ltabs = document.querySelectorAll('.lang-nav li');
+  const lpanels = document.querySelectorAll('.lang-panel');
+  ltabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.ltab;
+      ltabs.forEach(t => t.classList.remove('active'));
+      lpanels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  // Close mobile nav after click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // ═══════════════════════════════════════════════════════════
+  // DYNAMIC ENHANCEMENTS
+  // ═══════════════════════════════════════════════════════════
+
+  // 1) Reading progress bar
+  const progressBar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progressBar.style.width = pct + '%';
+  }, {passive: true});
+
+  // 2) Custom cursor follower
+  const cursor = document.getElementById('cursorDot');
+  let mx = 0, my = 0, cx = 0, cy = 0;
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+  });
+  function animateCursor() {
+    cx += (mx - cx) * 0.18;
+    cy += (my - cy) * 0.18;
+    cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  document.querySelectorAll('a, button, .unit-card, .phrasal-item, .tip-card, .writing-nav li, .lang-nav li').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+
+  // 3) Scroll reveal - elements fade up on entering viewport
+  const revealEls = document.querySelectorAll('.reveal, .unit-card, .tip-card, .phrasal-item, .rule-card, .phrase-card, .linker-cat, .breakdown-item, .hero-card');
+  revealEls.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // Stagger cards: add slight delay based on index within parent
+  document.querySelectorAll('.units-grid, .tips-grid, .phrasal-grid, .rule-grid, .phrases-grid, .linker-cats').forEach(grid => {
+    [...grid.children].forEach((child, i) => {
+      child.style.transitionDelay = (i * 0.06) + 's';
+    });
+  });
+
+  // 4) Stat counter animation
+  function animateCounter(el, target, duration = 1500) {
+    if (target === '∞' || target === '40+') {
+      el.textContent = '0';
+      let pct = 0;
+      const start = performance.now();
+      function step(now) {
+        pct = Math.min((now - start) / duration, 1);
+        const v = Math.floor(pct * (target === '∞' ? 99 : 40));
+        el.textContent = v + (target === '40+' && pct === 1 ? '+' : '');
+        if (pct < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+      return;
+    }
+    const final = parseInt(target);
+    if (isNaN(final)) return;
+    const start = performance.now();
+    function step(now) {
+      const pct = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - pct, 3);
+      el.textContent = Math.floor(eased * final);
+      if (pct < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const numEl = entry.target;
+        const target = numEl.dataset.value || numEl.textContent;
+        numEl.dataset.value = target;
+        animateCounter(numEl, target);
+        statsObserver.unobserve(numEl);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat .num').forEach(n => statsObserver.observe(n));
+
+  // 5) Section indicator - highlight active section while scrolling
+  const sectionLinks = document.querySelectorAll('.section-indicator a');
+  const sections = ['home', 'courses', 'language', 'writing', 'tips', 'tests', 'exam'].map(id => document.getElementById(id));
+  function updateSectionIndicator() {
+    const scrollPos = window.scrollY + window.innerHeight / 3;
+    let activeIdx = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.offsetTop <= scrollPos) activeIdx = i;
+    });
+    sectionLinks.forEach((link, i) => {
+      link.classList.toggle('active', i === activeIdx);
+    });
+  }
+  window.addEventListener('scroll', updateSectionIndicator, {passive: true});
+  updateSectionIndicator();
+
+  // 6) Magnetic button effect (subtle attraction)
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+
+  // 7) Subtle parallax on hero shapes
+  const heroShapes = document.querySelectorAll('.hero-shape');
+  document.addEventListener('mousemove', (e) => {
+    const cx = (e.clientX / window.innerWidth - 0.5) * 2;
+    const cy = (e.clientY / window.innerHeight - 0.5) * 2;
+    heroShapes.forEach((shape, i) => {
+      const factor = (i + 1) * 12;
+      const baseRotate = shape.classList.contains('s1') ? -15 : 0;
+      shape.style.transform = `translate(${cx * factor}px, ${cy * factor}px) rotate(${baseRotate}deg)`;
+    });
+  });
+
+  // 8) 🔥 3D Card Tilt — cards rotate in 3D space following the cursor
+  function init3DTilt() {
+    const tiltCards = document.querySelectorAll('.unit-card, .test-card, .tip-card, .hero-card');
+    tiltCards.forEach(card => {
+      card.classList.add('tilt');
+      let rafId = null;
+
+      card.addEventListener('mousemove', (e) => {
+        if (window.innerWidth < 900) return; // disable on mobile
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rotateX = ((y - cy) / cy) * -7;
+        const rotateY = ((x - cx) / cx) * 7;
+
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          card.classList.add('tilting');
+          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.015)`;
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        card.classList.remove('tilting');
+        card.style.transform = '';
+      });
+    });
+  }
+  init3DTilt();
+
+  // 9) 🌌 Parallax on hero orbs (subtle drift with cursor)
+  const orbs = document.querySelectorAll('.hero-orb');
+  document.addEventListener('mousemove', (e) => {
+    const cx = (e.clientX / window.innerWidth - 0.5) * 2;
+    const cy = (e.clientY / window.innerHeight - 0.5) * 2;
+    orbs.forEach((orb, i) => {
+      const factor = (i + 1) * 30;
+      orb.style.translate = `${cx * factor}px ${cy * factor}px`;
+    });
+  });
+
+  // ═══════════════════════════════════════════════════════════
+  // QUIZ ENGINE
+  // ═══════════════════════════════════════════════════════════
+
+  const TESTS = {
+    grammar: {
+      title: 'Grammar Mastery',
+      titleAr: 'إتقان القواعد',
+      questions: [
+        { q: 'She _____ to school every day.', opts: ['go', 'goes', 'going', 'gone'], a: 1,
+          ex: '"She" is third person singular → present simple takes "-s".', exAr: 'مع الضمير "She" نضيف "s" إلى الفعل في المضارع البسيط.' },
+        { q: 'If I _____ time, I would help you.', opts: ['have', 'had', 'will have', 'would have'], a: 1,
+          ex: 'Type 2 Conditional: If + past simple, would + V.', exAr: 'الشرط النوع 2: If + ماضي بسيط، would + الفعل المصدر.' },
+        { q: 'The window _____ by Tom yesterday.', opts: ['broke', 'broken', 'was broken', 'is broken'], a: 2,
+          ex: 'Passive voice past simple: was/were + V3 (broken).', exAr: 'المبني للمجهول في الماضي البسيط: was/were + اسم المفعول.' },
+        { q: 'I _____ never been to Paris.', opts: ['has', 'have', 'had', 'am'], a: 1,
+          ex: 'Present perfect with "I": have + V3.', exAr: 'المضارع التام مع "I" نستعمل "have" + اسم المفعول.' },
+        { q: 'By the time we arrived, the film _____.', opts: ['started', 'has started', 'had started', 'was starting'], a: 2,
+          ex: 'Past perfect (had + V3) for an action that happened before another past action.', exAr: 'الماضي التام (had + V3) لفعل وقع قبل فعل ماضٍ آخر.' },
+        { q: 'She told me she _____ tired.', opts: ['is', 'was', 'has been', 'will be'], a: 1,
+          ex: 'Reported speech: present simple → past simple (is → was).', exAr: 'الكلام المنقول: المضارع البسيط يتحول إلى الماضي البسيط.' },
+        { q: 'You _____ smoke in this building. It is forbidden.', opts: ["mustn't", "don't have to", "shouldn't", "wouldn't"], a: 0,
+          ex: '"Mustn\'t" expresses prohibition (something forbidden).', exAr: '"Mustn\'t" تُعبّر عن المنع (شيء ممنوع).' },
+        { q: 'If I _____ the exam, my parents will be proud.', opts: ['pass', 'will pass', 'passed', 'would pass'], a: 0,
+          ex: 'Type 1 Conditional: If + present simple, will + V.', exAr: 'الشرط النوع 1: If + مضارع بسيط، will + الفعل.' },
+        { q: 'This is the woman _____ helped me.', opts: ['which', 'who', 'whose', 'where'], a: 1,
+          ex: '"Who" is used for people as a subject.', exAr: '"Who" تُستعمل للأشخاص (كفاعل).' },
+        { q: 'The students _____ in the library now.', opts: ['study', 'studies', 'are studying', 'studied'], a: 2,
+          ex: '"Now" signals present continuous: am/is/are + V-ing.', exAr: 'كلمة "now" تدل على المضارع المستمر: am/is/are + الفعل + ing.' },
+        { q: 'He _____ to me since last week.', opts: ["hasn't spoken", "didn't speak", "doesn't speak", "wasn't speaking"], a: 0,
+          ex: '"Since" + present perfect for an action continuing to now.', exAr: '"Since" مع المضارع التام لفعل يستمر حتى الآن.' },
+        { q: 'I wish I _____ more languages.', opts: ['know', 'knew', 'will know', 'would know'], a: 1,
+          ex: 'After "I wish" for present situations, we use past simple.', exAr: 'بعد "I wish" للمواقف الحالية نستعمل الماضي البسيط.' }
+      ]
+    },
+    vocab: {
+      title: 'Vocabulary Test',
+      titleAr: 'اختبار المفردات',
+      questions: [
+        { q: 'What is the synonym of "happy"?', opts: ['sad', 'angry', 'joyful', 'tired'], a: 2,
+          ex: '"Joyful" means full of joy = happy.', exAr: '"Joyful" تعني مفعم بالفرح = سعيد.' },
+        { q: 'What is the opposite of "expensive"?', opts: ['costly', 'cheap', 'rich', 'poor'], a: 1,
+          ex: '"Cheap" is the antonym of expensive.', exAr: '"Cheap" (رخيص) هي عكس "expensive" (غالي).' },
+        { q: 'A person who teaches at university is a...', opts: ['professor', 'pupil', 'student', 'driver'], a: 0,
+          ex: '"Professor" is a university teacher.', exAr: '"Professor" هو أستاذ جامعي.' },
+        { q: 'What does "sustainable" mean?', opts: ['lasting a long time without harm', 'very fast', 'very small', 'very loud'], a: 0,
+          ex: 'Sustainable = able to continue without damaging the environment.', exAr: '"Sustainable" = قابل للاستمرار دون الإضرار بالبيئة (مستدام).' },
+        { q: 'She works as a _____ in a hospital.', opts: ['teacher', 'nurse', 'engineer', 'pilot'], a: 1,
+          ex: 'A "nurse" works in a hospital caring for patients.', exAr: '"Nurse" (ممرضة) تعمل في المستشفى لرعاية المرضى.' },
+        { q: 'What is the meaning of "volunteer"?', opts: ['someone who works for free', 'someone paid a lot', 'someone lazy', 'someone rich'], a: 0,
+          ex: 'A volunteer offers their time without payment.', exAr: 'المتطوع هو شخص يقدم وقته دون مقابل مادي.' },
+        { q: 'The opposite of "ancient" is...', opts: ['old', 'modern', 'huge', 'strong'], a: 1,
+          ex: '"Ancient" (very old) ↔ "modern" (recent / current).', exAr: '"Ancient" (قديم جدًا) ↔ "modern" (حديث / عصري).' },
+        { q: 'The migration of skilled workers abroad is called...', opts: ['brain drain', 'brain wash', 'brain food', 'brain gain'], a: 0,
+          ex: '"Brain drain" = the loss of skilled professionals to other countries.', exAr: '"Brain drain" = هجرة الكفاءات والأدمغة إلى دول أخرى.' },
+        { q: 'A document needed to travel abroad is a...', opts: ['license', 'passport', 'ticket', 'contract'], a: 1,
+          ex: 'A passport identifies you internationally.', exAr: 'جواز السفر (Passport) هو الوثيقة المطلوبة للسفر دوليًا.' },
+        { q: 'Someone who cannot see is...', opts: ['deaf', 'blind', 'mute', 'lame'], a: 1,
+          ex: '"Blind" means unable to see. "Deaf" = unable to hear.', exAr: '"Blind" تعني أعمى (لا يرى). أما "Deaf" فتعني أصم (لا يسمع).' }
+      ]
+    },
+    phrasal: {
+      title: 'Phrasal Verbs',
+      titleAr: 'الأفعال المركبة',
+      questions: [
+        { q: 'I need to _____ this word in the dictionary.', opts: ['look after', 'look up', 'look for', 'look at'], a: 1,
+          ex: '"Look up" = search for information in a book or dictionary.', exAr: '"Look up" = البحث عن معلومة في كتاب أو قاموس.' },
+        { q: 'She _____ smoking last year. She no longer smokes.', opts: ['gave up', 'gave back', 'gave away', 'gave out'], a: 0,
+          ex: '"Give up" = stop doing something (quit a habit).', exAr: '"Give up" = التوقف عن فعل شيء (الإقلاع عن عادة).' },
+        { q: 'My car _____ on the highway and I had to walk.', opts: ['broke down', 'broke up', 'broke into', 'broke off'], a: 0,
+          ex: '"Break down" = stop working (for machines, vehicles).', exAr: '"Break down" = يتعطل (للآلات والسيارات).' },
+        { q: "Don't _____ your studies until tomorrow. Do them now!", opts: ['put on', 'put off', 'put in', 'put away'], a: 1,
+          ex: '"Put off" = postpone, delay.', exAr: '"Put off" = يُؤجل، يُرجئ.' },
+        { q: 'He _____ his father — they have the same eyes and smile.', opts: ['takes after', 'takes off', 'takes out', 'takes in'], a: 0,
+          ex: '"Take after" = look like / behave like a family member.', exAr: '"Take after" = يُشبه أحد أفراد الأسرة في الشكل أو السلوك.' },
+        { q: 'I _____ an old photo while cleaning my room.', opts: ['came up', 'came across', 'came in', 'came back'], a: 1,
+          ex: '"Come across" = find by chance / accident.', exAr: '"Come across" = يصادف / يجد بالصدفة.' },
+        { q: 'We _____ milk. Can you buy some on your way home?', opts: ['ran out of', 'ran into', 'ran away', 'ran over'], a: 0,
+          ex: '"Run out of" = have no more left.', exAr: '"Run out of" = نَفِد منه / لم يبقَ منه شيء.' },
+        { q: 'Please _____ this application form and sign it.', opts: ['fill up', 'fill in', 'fill away', 'fill over'], a: 1,
+          ex: '"Fill in" (or "fill out") = complete a form.', exAr: '"Fill in" أو "Fill out" = يملأ استمارة.' },
+        { q: 'Good parents _____ their children carefully.', opts: ['look after', 'look up', 'look down', 'look at'], a: 0,
+          ex: '"Look after" = take care of.', exAr: '"Look after" = يعتني بـ.' },
+        { q: 'She _____ a great idea during the meeting.', opts: ['came up with', 'came down', 'came out', 'came back'], a: 0,
+          ex: '"Come up with" = think of / produce an idea.', exAr: '"Come up with" = يأتي بفكرة / يبتكر.' }
+      ]
+    },
+    irregular: {
+      title: 'Irregular Verbs',
+      titleAr: 'الأفعال الشاذة',
+      questions: [
+        { q: 'The past simple of "go" is...', opts: ['goed', 'went', 'gone', 'going'], a: 1,
+          ex: 'go → went (V2) → gone (V3).', exAr: 'تصريف "go": went (الماضي) — gone (اسم المفعول).' },
+        { q: 'The past participle (V3) of "eat" is...', opts: ['eaten', 'ate', 'eated', 'eating'], a: 0,
+          ex: 'eat → ate → eaten.', exAr: 'تصريف "eat": ate (الماضي) — eaten (اسم المفعول).' },
+        { q: 'The past simple of "buy" is...', opts: ['buyed', 'bought', 'brought', 'boughten'], a: 1,
+          ex: 'buy → bought → bought. (Don\'t confuse with "brought" from "bring".)', exAr: 'تصريف "buy": bought. (لا تخلط مع "brought" من فعل "bring".)' },
+        { q: 'The past participle of "write" is...', opts: ['wrote', 'writed', 'written', 'writting'], a: 2,
+          ex: 'write → wrote → written.', exAr: 'تصريف "write": wrote (الماضي) — written (اسم المفعول).' },
+        { q: 'The past simple of "think" is...', opts: ['thinked', 'thought', 'taught', 'thank'], a: 1,
+          ex: 'think → thought → thought. ("taught" is from "teach"!)', exAr: 'تصريف "think": thought. (و"taught" هو من فعل "teach"!)' },
+        { q: 'The past participle of "see" is...', opts: ['saw', 'seen', 'seed', 'seeing'], a: 1,
+          ex: 'see → saw → seen.', exAr: 'تصريف "see": saw (الماضي) — seen (اسم المفعول).' },
+        { q: 'The past simple of "drive" is...', opts: ['drived', 'drove', 'driven', 'driving'], a: 1,
+          ex: 'drive → drove → driven.', exAr: 'تصريف "drive": drove (الماضي) — driven (اسم المفعول).' },
+        { q: 'The past participle of "break" is...', opts: ['broke', 'broken', 'breaked', 'breaking'], a: 1,
+          ex: 'break → broke → broken.', exAr: 'تصريف "break": broke (الماضي) — broken (اسم المفعول).' },
+        { q: 'The past simple of "teach" is...', opts: ['teached', 'taught', 'thought', 'teached'], a: 1,
+          ex: 'teach → taught → taught.', exAr: 'تصريف "teach": taught (الماضي واسم المفعول).' },
+        { q: 'The past participle of "speak" is...', opts: ['spoke', 'spoken', 'speaked', 'speaking'], a: 1,
+          ex: 'speak → spoke → spoken.', exAr: 'تصريف "speak": spoke (الماضي) — spoken (اسم المفعول).' }
+      ]
+    },
+    reading: {
+      title: 'Reading Comprehension',
+      titleAr: 'فهم النص',
+      readingText: 'In recent years, many young Moroccans have been leaving their country in search of better opportunities abroad. This phenomenon, known as "brain drain", has serious consequences for Morocco. Talented engineers, doctors, and scientists often move to Europe or North America where salaries are higher and working conditions are far better. While this benefits the individuals personally, it weakens the national economy and slows down development. Experts believe that creating more job opportunities and improving local universities could help reverse this trend and encourage skilled professionals to stay or return home.',
+      questions: [
+        { q: 'What is the main topic of the text?', opts: ['Tourism in Morocco', 'Brain drain', 'Climate change', 'University fees'], a: 1,
+          ex: 'The text talks about young Moroccans leaving the country — this is brain drain.', exAr: 'النص يتحدث عن مغادرة الشباب المغاربة لبلدهم — وهذا هو "هجرة الأدمغة".' },
+        { q: 'Where do most skilled Moroccans go?', opts: ['Asia and Africa', 'Australia', 'Europe or North America', 'South America'], a: 2,
+          ex: 'The text clearly states "Europe or North America".', exAr: 'النص يذكر صراحة "Europe or North America".' },
+        { q: 'According to the text, brain drain is...', opts: ['good for Morocco', 'bad for Morocco', 'neutral', 'unknown'], a: 1,
+          ex: 'The text says it "weakens the national economy and slows down development".', exAr: 'يقول النص إنها "تُضعف الاقتصاد الوطني وتُبطئ التنمية".' },
+        { q: 'Why do skilled Moroccans leave?', opts: ['Better weather', 'Higher salaries and better conditions', 'Family pressure', 'Cheap travel'], a: 1,
+          ex: 'The text mentions "salaries are higher and working conditions are far better".', exAr: 'النص يذكر أن "الرواتب أعلى وظروف العمل أفضل بكثير".' },
+        { q: 'What could help solve the problem?', opts: ['Closing universities', 'Stopping all migration', 'Creating more jobs and improving universities', 'Lowering salaries'], a: 2,
+          ex: 'Experts suggest creating more jobs and improving universities.', exAr: 'يقترح الخبراء خلق المزيد من فرص العمل وتحسين الجامعات.' }
+      ]
+    },
+    mixed: {
+      title: 'Level Placement Test',
+      titleAr: 'اختبار تحديد المستوى',
+      questions: [
+        { q: 'I _____ in Casablanca for 10 years.', opts: ['live', 'lived', 'have lived', 'am living'], a: 2,
+          ex: 'Present perfect for actions starting in the past and continuing.', exAr: 'المضارع التام لأفعال بدأت في الماضي ومستمرة.' },
+        { q: 'If she _____ harder, she would pass.', opts: ['study', 'studied', 'studies', 'will study'], a: 1,
+          ex: 'Type 2 Conditional: past simple after "if".', exAr: 'الشرط النوع 2: الماضي البسيط بعد "if".' },
+        { q: 'Choose the synonym of "intelligent":', opts: ['stupid', 'smart', 'lazy', 'rich'], a: 1,
+          ex: 'Smart = intelligent.', exAr: '"Smart" تعني ذكي = intelligent.' },
+        { q: 'He _____ his keys yesterday.', opts: ['loses', 'losed', 'lost', 'losing'], a: 2,
+          ex: 'lose → lost (irregular).', exAr: 'تصريف "lose": lost (شاذ).' },
+        { q: 'Please _____ the lights when you leave.', opts: ['turn off', 'turn on', 'turn up', 'turn over'], a: 0,
+          ex: '"Turn off" = stop / switch off.', exAr: '"Turn off" = يُطفئ / يوقف التشغيل.' },
+        { q: 'The book _____ I read was amazing.', opts: ['who', 'which', 'whose', 'when'], a: 1,
+          ex: '"Which" for things.', exAr: '"Which" تُستعمل للأشياء.' },
+        { q: 'This phone was made _____ China.', opts: ['by', 'in', 'on', 'with'], a: 1,
+          ex: '"In" for countries / places of origin.', exAr: '"In" تُستعمل للدول وأماكن الصنع.' },
+        { q: 'You _____ park here. There\'s a sign.', opts: ["mustn't", "don't have to", "could", "would"], a: 0,
+          ex: '"Mustn\'t" = prohibition.', exAr: '"Mustn\'t" تعني المنع.' },
+        { q: 'She asked me where I _____.', opts: ['live', 'lived', 'will live', 'living'], a: 1,
+          ex: 'Reported speech: present → past.', exAr: 'الكلام المنقول: المضارع يتحول إلى الماضي.' },
+        { q: 'Choose the past participle of "drink":', opts: ['drank', 'drunk', 'drunken', 'drinked'], a: 1,
+          ex: 'drink → drank → drunk.', exAr: 'تصريف "drink": drank (الماضي) — drunk (اسم المفعول).' },
+        { q: 'The opposite of "generous" is...', opts: ['kind', 'selfish', 'happy', 'tall'], a: 1,
+          ex: '"Selfish" = caring only about yourself.', exAr: '"Selfish" تعني أناني = عكس "generous" (كريم).' },
+        { q: 'I look forward _____ from you.', opts: ['to hear', 'hearing', 'to hearing', 'hear'], a: 2,
+          ex: '"Look forward to" + V-ing.', exAr: '"Look forward to" متبوع بفعل + ing.' },
+        { q: 'There aren\'t _____ apples in the basket.', opts: ['much', 'many', 'some', 'a lot'], a: 1,
+          ex: '"Many" for countable nouns; "much" for uncountable.', exAr: '"Many" مع المعدودات؛ "much" مع غير المعدودات.' },
+        { q: 'If I had known, I _____ helped you.', opts: ['will', 'would', 'would have', 'had'], a: 2,
+          ex: 'Type 3 Conditional: would have + V3.', exAr: 'الشرط النوع 3: would have + اسم المفعول.' },
+        { q: 'She enjoys _____ to music.', opts: ['listen', 'listening', 'to listen', 'listened'], a: 1,
+          ex: 'After "enjoy" we use the gerund (V-ing).', exAr: 'بعد "enjoy" نستعمل المصدر المنتهي بـ ing.' }
+      ]
+    }
+  };
+
+  let currentTest = null;
+  let currentQIdx = 0;
+  let score = 0;
+  let answered = false;
+
+  // Wire up test cards
+  document.querySelectorAll('.test-card').forEach(card => {
+    card.addEventListener('click', () => startTest(card.dataset.test));
+  });
+
+  function startTest(key) {
+    currentTest = TESTS[key];
+    if (!currentTest) return;
+    currentQIdx = 0;
+    score = 0;
+    answered = false;
+
+    document.getElementById('testHub').hidden = true;
+    document.getElementById('testResults').hidden = true;
+    document.getElementById('testQuiz').hidden = false;
+
+    document.getElementById('quizTitle').innerHTML = currentTest.title + '<span class="ar-inline">' + currentTest.titleAr + '</span>';
+
+    // Add reading text if present
+    const rtw = document.getElementById('readingTextWrap');
+    if (currentTest.readingText) {
+      rtw.innerHTML = '<div class="reading-text"><div class="reading-text-label">Read the text — اقرأ النص</div>' + currentTest.readingText + '</div>';
+    } else {
+      rtw.innerHTML = '';
+    }
+
+    renderQuestion();
+    document.getElementById('testQuiz').scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+
+  function renderQuestion() {
+    answered = false;
+    const q = currentTest.questions[currentQIdx];
+    const total = currentTest.questions.length;
+
+    document.getElementById('quizProgressLabel').textContent = `Question ${currentQIdx + 1} of ${total}`;
+    document.getElementById('quizScore').textContent = score;
+    document.getElementById('quizProgressFill').style.width = ((currentQIdx) / total * 100) + '%';
+
+    const letters = ['A', 'B', 'C', 'D'];
+    const optionsHTML = q.opts.map((opt, i) =>
+      `<button class="q-option" data-letter="${letters[i]}" data-idx="${i}" onclick="answerQuestion(${i})">${opt}</button>`
+    ).join('');
+
+    document.getElementById('questionWrap').innerHTML = `
+      <div class="q-num">Question ${String(currentQIdx + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}</div>
+      <h3 class="q-text">${q.q}</h3>
+      <div class="q-options">${optionsHTML}</div>
+      <div id="feedbackSlot"></div>
+      <div class="q-actions" id="actionsSlot"></div>
+    `;
+  }
+
+  window.answerQuestion = function(idx) {
+    if (answered) return;
+    answered = true;
+    const q = currentTest.questions[currentQIdx];
+    const correct = q.a;
+    const opts = document.querySelectorAll('.q-option');
+
+    opts.forEach((opt, i) => {
+      opt.disabled = true;
+      if (i === correct) opt.classList.add('correct');
+      else if (i === idx) opt.classList.add('wrong');
+    });
+
+    const isRight = idx === correct;
+    if (isRight) score++;
+    document.getElementById('quizScore').textContent = score;
+
+    const fbHTML = `
+      <div class="q-feedback">
+        <div class="result-label">${isRight ? '✓ Correct · صحيح' : '✕ Wrong · خاطئ'}</div>
+        <p>${q.ex}</p>
+        <span class="ar">${q.exAr}</span>
+      </div>
+    `;
+    document.getElementById('feedbackSlot').innerHTML = fbHTML;
+
+    const isLast = currentQIdx === currentTest.questions.length - 1;
+    document.getElementById('actionsSlot').innerHTML = isLast
+      ? '<button class="btn btn-primary" onclick="showResults()">See Results · النتائج →</button>'
+      : '<button class="btn btn-primary" onclick="nextQuestion()">Next · التالي →</button>';
+  };
+
+  window.nextQuestion = function() {
+    currentQIdx++;
+    renderQuestion();
+  };
+
+  window.showResults = function() {
+    const total = currentTest.questions.length;
+    const pct = Math.round((score / total) * 100);
+
+    document.getElementById('testQuiz').hidden = true;
+    document.getElementById('testResults').hidden = false;
+
+    // Animate score
+    let displayed = 0;
+    const animateScore = () => {
+      if (displayed < pct) {
+        displayed += 1;
+        document.getElementById('finalScore').textContent = displayed;
+        requestAnimationFrame(animateScore);
+      }
+    };
+    setTimeout(animateScore, 400);
+
+    // Animate circle
+    const circleCircumference = 565; // 2 * Math.PI * 90
+    const offset = circleCircumference - (pct / 100) * circleCircumference;
+    setTimeout(() => {
+      document.getElementById('scoreCircle').style.strokeDashoffset = offset;
+    }, 100);
+
+    document.getElementById('correctCount').textContent = score;
+    document.getElementById('wrongCount').textContent = total - score;
+    document.getElementById('totalCount').textContent = total;
+
+    // Set level + message
+    let level, msg, msgAr, color;
+    if (pct >= 90) {
+      level = 'C1 · Advanced';
+      msg = '<em>Outstanding!</em> Your English is excellent.';
+      msgAr = 'ممتاز! مستواك في الإنجليزية رائع.';
+    } else if (pct >= 75) {
+      level = 'B2 · Upper Intermediate';
+      msg = '<em>Great work!</em> You\'re very well prepared.';
+      msgAr = 'أحسنت! أنت مُجهّز بشكل جيد جدًا.';
+    } else if (pct >= 60) {
+      level = 'B1 · Intermediate';
+      msg = '<em>Good job.</em> Keep practicing to improve further.';
+      msgAr = 'عمل جيد. استمر في التدريب لتتطور أكثر.';
+    } else if (pct >= 40) {
+      level = 'A2 · Elementary';
+      msg = 'You\'re <em>on your way.</em> Review the courses and try again.';
+      msgAr = 'أنت في الطريق. راجع الدروس وحاول مرة أخرى.';
+    } else {
+      level = 'A1 · Beginner';
+      msg = 'Don\'t give up! <em>Start</em> with the basics in the Courses section.';
+      msgAr = 'لا تستسلم! ابدأ بالأساسيات في قسم الدروس.';
+    }
+
+    document.getElementById('levelBadge').innerHTML = 'Your Level: <span class="gold">' + level + '</span>';
+    document.getElementById('resultsMessage').innerHTML = msg;
+    document.getElementById('resultsMessageAr').textContent = msgAr;
+
+    document.getElementById('testResults').scrollIntoView({behavior: 'smooth', block: 'start'});
+  };
+
+  window.restartTest = function() {
+    if (!currentTest) return;
+    // Reset circle
+    document.getElementById('scoreCircle').style.strokeDashoffset = '565';
+    // Find the test key
+    const key = Object.keys(TESTS).find(k => TESTS[k] === currentTest);
+    startTest(key);
+  };
+
+  window.exitTest = function() {
+    document.getElementById('testQuiz').hidden = true;
+    document.getElementById('testResults').hidden = true;
+    document.getElementById('testHub').hidden = false;
+    // Reset circle for next time
+    document.getElementById('scoreCircle').style.strokeDashoffset = '565';
+    document.getElementById('tests').scrollIntoView({behavior: 'smooth', block: 'start'});
+  };
+</script>
+
+</body>
+</html>
